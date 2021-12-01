@@ -1,1 +1,1 @@
-# marketplace
+# IoT Data Exchange & Marketplace Repository
