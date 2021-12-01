@@ -1,0 +1,4603 @@
+{
+  "version": 2,
+  "machines": [
+    {
+      "machine": {
+        "id": "B1UDgrRX5P",
+        "name": "Wind Turbine",
+        "state": "stopped",
+        "metadata": {
+          "owner": "admin",
+          "lastModified": 1638335229504,
+          "lastModifiedBy": "unknown",
+          "fileVersion": "2.0.0"
+        },
+        "streamsheets": [
+          {
+            "id": "r1zTAD66BE",
+            "name": "S1",
+            "loop": {
+              "path": "",
+              "enabled": false,
+              "recursively": false
+            },
+            "inbox": {
+              "max": 20,
+              "type": "Inbox",
+              "id": "BkOPeS0X9P",
+              "stream": null
+            },
+            "sheet": {
+              "cells": {
+                "A1": {
+                  "value": "Simulated Wind Power Plant",
+                  "type": "string",
+                  "level": 0,
+                  "ref": {
+                    "col": "A",
+                    "row": 1
+                  }
+                },
+                "A3": {
+                  "value": "Wind Trend (changes randomly)",
+                  "type": "string",
+                  "level": 0,
+                  "ref": {
+                    "col": "A",
+                    "row": 3
+                  }
+                },
+                "IF6": {
+                  "formula": "RANDBETWEEN(0,25)=10",
+                  "value": false,
+                  "type": "undefined",
+                  "level": 0,
+                  "ref": {
+                    "col": "IF",
+                    "row": 6
+                  }
+                },
+                "A6": {
+                  "value": "Change of wind",
+                  "type": "string",
+                  "level": 0,
+                  "ref": {
+                    "col": "A",
+                    "row": 6
+                  }
+                },
+                "B6": {
+                  "formula": "RANDBETWEEN(-10,11)/100",
+                  "value": -0.04,
+                  "type": "undefined",
+                  "level": 0,
+                  "ref": {
+                    "col": "B",
+                    "row": 6
+                  }
+                },
+                "A8": {
+                  "value": "Calculate JSON Payload",
+                  "type": "string",
+                  "level": 0,
+                  "ref": {
+                    "col": "A",
+                    "row": 8
+                  }
+                },
+                "A10": {
+                  "value": "Machine Data",
+                  "type": "string",
+                  "level": 0,
+                  "ref": {
+                    "col": "A",
+                    "row": 10
+                  }
+                },
+                "A11": {
+                  "value": "Speed",
+                  "type": "string",
+                  "level": 1,
+                  "ref": {
+                    "col": "A",
+                    "row": 11
+                  }
+                },
+                "B11": {
+                  "formula": "MIN(15,MAX(1,B6+B11))",
+                  "value": 14.200000000000017,
+                  "type": "undefined",
+                  "level": 0,
+                  "ref": {
+                    "col": "B",
+                    "row": 11
+                  }
+                },
+                "C11": {
+                  "value": "m/s",
+                  "type": "string",
+                  "level": 0,
+                  "ref": {
+                    "col": "C",
+                    "row": 11
+                  }
+                },
+                "A12": {
+                  "value": "Angle Deg",
+                  "type": "string",
+                  "level": 1,
+                  "ref": {
+                    "col": "A",
+                    "row": 12
+                  }
+                },
+                "B12": {
+                  "formula": "MOD(B12+B11,360)",
+                  "value": 72.40651171463922,
+                  "type": "undefined",
+                  "level": 0,
+                  "ref": {
+                    "col": "B",
+                    "row": 12
+                  }
+                },
+                "C12": {
+                  "value": "degree",
+                  "type": "string",
+                  "level": 0,
+                  "ref": {
+                    "col": "C",
+                    "row": 12
+                  }
+                },
+                "A13": {
+                  "value": "Angle Rad",
+                  "type": "string",
+                  "level": 1,
+                  "ref": {
+                    "col": "A",
+                    "row": 13
+                  }
+                },
+                "B13": {
+                  "formula": "RADIANS(B12)",
+                  "value": 1.2637320293042993,
+                  "type": "undefined",
+                  "level": 0,
+                  "ref": {
+                    "col": "B",
+                    "row": 13
+                  }
+                },
+                "C13": {
+                  "value": "radians",
+                  "type": "string",
+                  "level": 0,
+                  "ref": {
+                    "col": "C",
+                    "row": 13
+                  }
+                },
+                "A14": {
+                  "value": "Power",
+                  "type": "string",
+                  "level": 1,
+                  "ref": {
+                    "col": "A",
+                    "row": 14
+                  }
+                },
+                "B14": {
+                  "formula": "ROUND(B11*80,2)",
+                  "value": 1136,
+                  "type": "undefined",
+                  "level": 0,
+                  "ref": {
+                    "col": "B",
+                    "row": 14
+                  }
+                },
+                "C14": {
+                  "value": "kW",
+                  "type": "string",
+                  "level": 0,
+                  "ref": {
+                    "col": "C",
+                    "row": 14
+                  }
+                },
+                "A15": {
+                  "value": "Location",
+                  "type": "string",
+                  "level": 0,
+                  "ref": {
+                    "col": "A",
+                    "row": 15
+                  }
+                },
+                "B15": {
+                  "value": "Freiburg",
+                  "type": "string",
+                  "level": 0,
+                  "ref": {
+                    "col": "B",
+                    "row": 15
+                  }
+                },
+                "A17": {
+                  "value": "Publish to MQTT Broker",
+                  "type": "string",
+                  "level": 0,
+                  "ref": {
+                    "col": "A",
+                    "row": 17
+                  }
+                },
+                "A19": {
+                  "value": "Topic",
+                  "type": "string",
+                  "level": 0,
+                  "ref": {
+                    "col": "A",
+                    "row": 19
+                  }
+                },
+                "B19": {
+                  "value": "powerplant/plants/windmill",
+                  "type": "string",
+                  "level": 0,
+                  "ref": {
+                    "col": "B",
+                    "row": 19
+                  }
+                },
+                "A20": {
+                  "value": "Publish",
+                  "type": "string",
+                  "level": 0,
+                  "ref": {
+                    "col": "A",
+                    "row": 20
+                  }
+                },
+                "B20": {
+                  "formula": "MQTT.PUBLISH(|MQTT_Producer,JSON(A10:B15),B19)",
+                  "value": true,
+                  "type": "undefined",
+                  "level": 0,
+                  "references": [
+                    "|MQTT_Producer"
+                  ],
+                  "ref": {
+                    "col": "B",
+                    "row": 20
+                  }
+                },
+                "A22": {
+                  "value": "X-Position",
+                  "type": "string",
+                  "level": 0,
+                  "ref": {
+                    "col": "A",
+                    "row": 22
+                  }
+                },
+                "B22": {
+                  "value": 14000,
+                  "type": "number",
+                  "level": 0,
+                  "ref": {
+                    "col": "B",
+                    "row": 22
+                  }
+                },
+                "A23": {
+                  "value": "Y-Position",
+                  "type": "string",
+                  "level": 0,
+                  "ref": {
+                    "col": "A",
+                    "row": 23
+                  }
+                },
+                "B23": {
+                  "value": 5500,
+                  "type": "number",
+                  "level": 0,
+                  "ref": {
+                    "col": "B",
+                    "row": 23
+                  }
+                },
+                "A29": {
+                  "value": "Wind simulation:",
+                  "type": "string",
+                  "level": 0,
+                  "ref": {
+                    "col": "A",
+                    "row": 29
+                  }
+                },
+                "B29": {
+                  "value": "B6 simulates wind speed changes, by using a function called RANDBETWEEN(). This function gives back random numbers.",
+                  "type": "string",
+                  "level": 0,
+                  "ref": {
+                    "col": "B",
+                    "row": 29
+                  }
+                },
+                "A30": {
+                  "value": "Data calculation:",
+                  "type": "string",
+                  "level": 0,
+                  "ref": {
+                    "col": "A",
+                    "row": 30
+                  }
+                },
+                "B30": {
+                  "value": "B11 until B15 calculate values based on the current change of wind. Using simple spreadsheet formulars it is possible to calculate the wind speed and the angle of the blades.",
+                  "type": "string",
+                  "level": 0,
+                  "ref": {
+                    "col": "B",
+                    "row": 30
+                  }
+                },
+                "A31": {
+                  "value": "Data publish:",
+                  "type": "string",
+                  "level": 0,
+                  "ref": {
+                    "col": "A",
+                    "row": 31
+                  }
+                },
+                "B31": {
+                  "value": "B20 uses the stream function MQTT.PUBLISH to send data to a MQTT Broker. This data is then available under the topic in B19.",
+                  "type": "string",
+                  "level": 0,
+                  "ref": {
+                    "col": "B",
+                    "row": 31
+                  }
+                },
+                "A32": {
+                  "value": "Wind turbine input:",
+                  "type": "string",
+                  "level": 0,
+                  "ref": {
+                    "col": "A",
+                    "row": 32
+                  }
+                },
+                "B32": {
+                  "value": "The blades of the turbine in this simulation are shapes. As everything in Streamsheets, these shapes are based on a function. Parameters of a function can be static or set via cell references and this way made dynamic.",
+                  "type": "string",
+                  "level": 0,
+                  "ref": {
+                    "col": "B",
+                    "row": 32
+                  }
+                },
+                "B33": {
+                  "value": "In this szenario all shapes use the x & y parameters from cells B22 and B23. Further, the blades of the turbine use the cell value from B13 to calculate the blade positioning in the \"angle\" parameter.",
+                  "type": "string",
+                  "level": 0,
+                  "ref": {
+                    "col": "B",
+                    "row": 33
+                  }
+                }
+              },
+              "namedCells": {},
+              "shapes": {
+                "shapes": [
+                  {
+                    "id": 500151136714,
+                    "itemType": "node",
+                    "x": {
+                      "v": "10673"
+                    },
+                    "y": {
+                      "v": "7490"
+                    },
+                    "localX": {
+                      "f": "WIDTH*0.5",
+                      "v": "1744"
+                    },
+                    "localY": {
+                      "f": "HEIGHT*0.5",
+                      "v": "335.5"
+                    },
+                    "width": {
+                      "v": "3488"
+                    },
+                    "height": {
+                      "v": "671"
+                    },
+                    "parent": 1028,
+                    "reshape": [
+                      {
+                        "x": {
+                          "v": "0.1"
+                        },
+                        "y": {
+                          "v": "0"
+                        },
+                        "name": "ROUND",
+                        "xType": 14,
+                        "yType": -1,
+                        "xMax": 0.5
+                      }
+                    ],
+                    "shape": {
+                      "type": "bezier",
+                      "points": [
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "67.10000000000001"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH-MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "3420.9"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH",
+                            "v": "3488"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "67.10000000000001"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH",
+                            "v": "3488"
+                          },
+                          "y": {
+                            "f": "HEIGHT-ROUND*MIN(WIDTH%2CHEIGHT)",
+                            "v": "603.9"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH-MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "3420.9"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "671"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "67.10000000000001"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "671"
+                          }
+                        },
+                        {
+                          "x": {
+                            "v": "0"
+                          },
+                          "y": {
+                            "f": "HEIGHT-MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "603.9"
+                          }
+                        },
+                        {
+                          "x": {
+                            "v": "0"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "67.10000000000001"
+                          }
+                        }
+                      ],
+                      "source": {
+                        "v": "",
+                        "t": "s"
+                      },
+                      "to": [
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.4",
+                            "v": "268.40000000000003"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH-MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "3457.805"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH",
+                            "v": "3488"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.4",
+                            "v": "268.40000000000003"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH",
+                            "v": "3488"
+                          },
+                          "y": {
+                            "f": "HEIGHT-MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "640.805"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.6",
+                            "v": "402.59999999999997"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "671"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "30.195000000000004"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "671"
+                          }
+                        },
+                        {
+                          "x": {
+                            "v": "0"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.6",
+                            "v": "402.59999999999997"
+                          }
+                        },
+                        {
+                          "x": {
+                            "v": "0"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "30.195000000000004"
+                          }
+                        }
+                      ],
+                      "from": [
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "30.195000000000004"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.6",
+                            "v": "402.59999999999997"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH",
+                            "v": "3488"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "30.195000000000004"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH",
+                            "v": "3488"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.6",
+                            "v": "402.59999999999997"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH-MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "3457.805"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "671"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.4",
+                            "v": "268.40000000000003"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "671"
+                          }
+                        },
+                        {
+                          "x": {
+                            "v": "0"
+                          },
+                          "y": {
+                            "f": "HEIGHT-MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "640.805"
+                          }
+                        },
+                        {
+                          "x": {
+                            "v": "0"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.4",
+                            "v": "268.40000000000003"
+                          }
+                        }
+                      ]
+                    },
+                    "format": {
+                      "linecolor": {
+                        "v": "%23ff9900",
+                        "t": "s"
+                      }
+                    }
+                  },
+                  {
+                    "id": 660710416110,
+                    "itemType": "text",
+                    "x": {
+                      "v": "1744"
+                    },
+                    "y": {
+                      "v": "336"
+                    },
+                    "localX": {
+                      "f": "WIDTH*0.5",
+                      "v": "1670"
+                    },
+                    "localY": {
+                      "f": "HEIGHT*0.5",
+                      "v": "414.023930033048"
+                    },
+                    "width": {
+                      "v": "3340"
+                    },
+                    "height": {
+                      "v": "828.047860066096"
+                    },
+                    "parent": 500151136714,
+                    "shape": {
+                      "type": "rectangle"
+                    },
+                    "format": {
+                      "linestyle": {
+                        "v": "0"
+                      },
+                      "fillstyle": {
+                        "v": "0"
+                      }
+                    },
+                    "textformat": {
+                      "richtext": {
+                        "v": "false",
+                        "t": "b"
+                      },
+                      "fontname": {
+                        "v": "Arial",
+                        "t": "s"
+                      },
+                      "fontsize": {
+                        "v": "10"
+                      },
+                      "fontcolor": {
+                        "v": "%23434343",
+                        "t": "s"
+                      }
+                    },
+                    "attributes": {
+                      "sizemode": {
+                        "v": "2"
+                      }
+                    },
+                    "text": {
+                      "v": "~3Cp~3EData%20Calculation~3C%2Fp~3E",
+                      "t": "s"
+                    }
+                  },
+                  {
+                    "id": 301110506388,
+                    "itemType": "node",
+                    "x": {
+                      "v": "10669"
+                    },
+                    "y": {
+                      "v": "9618"
+                    },
+                    "localX": {
+                      "f": "WIDTH*0.5",
+                      "v": "1744"
+                    },
+                    "localY": {
+                      "f": "HEIGHT*0.5",
+                      "v": "335.5"
+                    },
+                    "width": {
+                      "v": "3488"
+                    },
+                    "height": {
+                      "v": "671"
+                    },
+                    "parent": 1028,
+                    "reshape": [
+                      {
+                        "x": {
+                          "v": "0.1"
+                        },
+                        "y": {
+                          "v": "0"
+                        },
+                        "name": "ROUND",
+                        "xType": 14,
+                        "yType": -1,
+                        "xMax": 0.5
+                      }
+                    ],
+                    "shape": {
+                      "type": "bezier",
+                      "points": [
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "67.10000000000001"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH-MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "3420.9"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH",
+                            "v": "3488"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "67.10000000000001"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH",
+                            "v": "3488"
+                          },
+                          "y": {
+                            "f": "HEIGHT-ROUND*MIN(WIDTH%2CHEIGHT)",
+                            "v": "603.9"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH-MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "3420.9"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "671"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "67.10000000000001"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "671"
+                          }
+                        },
+                        {
+                          "x": {
+                            "v": "0"
+                          },
+                          "y": {
+                            "f": "HEIGHT-MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "603.9"
+                          }
+                        },
+                        {
+                          "x": {
+                            "v": "0"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "67.10000000000001"
+                          }
+                        }
+                      ],
+                      "source": {
+                        "v": "",
+                        "t": "s"
+                      },
+                      "to": [
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.4",
+                            "v": "268.40000000000003"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH-MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "3457.805"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH",
+                            "v": "3488"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.4",
+                            "v": "268.40000000000003"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH",
+                            "v": "3488"
+                          },
+                          "y": {
+                            "f": "HEIGHT-MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "640.805"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.6",
+                            "v": "402.59999999999997"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "671"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "30.195000000000004"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "671"
+                          }
+                        },
+                        {
+                          "x": {
+                            "v": "0"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.6",
+                            "v": "402.59999999999997"
+                          }
+                        },
+                        {
+                          "x": {
+                            "v": "0"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "30.195000000000004"
+                          }
+                        }
+                      ],
+                      "from": [
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "30.195000000000004"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.6",
+                            "v": "402.59999999999997"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH",
+                            "v": "3488"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "30.195000000000004"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH",
+                            "v": "3488"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.6",
+                            "v": "402.59999999999997"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH-MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "3457.805"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "671"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.4",
+                            "v": "268.40000000000003"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "671"
+                          }
+                        },
+                        {
+                          "x": {
+                            "v": "0"
+                          },
+                          "y": {
+                            "f": "HEIGHT-MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "640.805"
+                          }
+                        },
+                        {
+                          "x": {
+                            "v": "0"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.4",
+                            "v": "268.40000000000003"
+                          }
+                        }
+                      ]
+                    },
+                    "format": {
+                      "linecolor": {
+                        "v": "%23ff9900",
+                        "t": "s"
+                      }
+                    }
+                  },
+                  {
+                    "id": 146516600655,
+                    "itemType": "text",
+                    "x": {
+                      "v": "1744"
+                    },
+                    "y": {
+                      "v": "336"
+                    },
+                    "localX": {
+                      "f": "WIDTH*0.5",
+                      "v": "1670"
+                    },
+                    "localY": {
+                      "f": "HEIGHT*0.5",
+                      "v": "414.023930033048"
+                    },
+                    "width": {
+                      "v": "3340"
+                    },
+                    "height": {
+                      "v": "828.047860066096"
+                    },
+                    "parent": 301110506388,
+                    "shape": {
+                      "type": "rectangle"
+                    },
+                    "format": {
+                      "linestyle": {
+                        "v": "0"
+                      },
+                      "fillstyle": {
+                        "v": "0"
+                      }
+                    },
+                    "textformat": {
+                      "richtext": {
+                        "v": "false",
+                        "t": "b"
+                      },
+                      "fontname": {
+                        "v": "Arial",
+                        "t": "s"
+                      },
+                      "fontsize": {
+                        "v": "10"
+                      },
+                      "fontcolor": {
+                        "v": "%23434343",
+                        "t": "s"
+                      }
+                    },
+                    "attributes": {
+                      "sizemode": {
+                        "v": "2"
+                      }
+                    },
+                    "text": {
+                      "v": "~3Cp~3EData%20publish~3C%2Fp~3E",
+                      "t": "s"
+                    }
+                  },
+                  {
+                    "id": 286052422285,
+                    "itemType": "node",
+                    "x": {
+                      "v": "24314.875"
+                    },
+                    "y": {
+                      "v": "7334.083333333332"
+                    },
+                    "localX": {
+                      "f": "WIDTH*0.5",
+                      "v": "5027"
+                    },
+                    "localY": {
+                      "f": "HEIGHT*0.5",
+                      "v": "3528"
+                    },
+                    "width": {
+                      "v": "10054"
+                    },
+                    "height": {
+                      "v": "7056"
+                    },
+                    "parent": 1028,
+                    "reshape": [
+                      {
+                        "x": {
+                          "v": "0.1"
+                        },
+                        "y": {
+                          "v": "0"
+                        },
+                        "name": "ROUND",
+                        "xType": 14,
+                        "yType": -1,
+                        "xMax": 0.5
+                      }
+                    ],
+                    "shape": {
+                      "type": "bezier",
+                      "points": [
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "705.6"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH-MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "9348.4"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH",
+                            "v": "10054"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "705.6"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH",
+                            "v": "10054"
+                          },
+                          "y": {
+                            "f": "HEIGHT-ROUND*MIN(WIDTH%2CHEIGHT)",
+                            "v": "6350.4"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH-MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "9348.4"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "7056"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "705.6"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "7056"
+                          }
+                        },
+                        {
+                          "x": {
+                            "v": "0"
+                          },
+                          "y": {
+                            "f": "HEIGHT-MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "6350.4"
+                          }
+                        },
+                        {
+                          "x": {
+                            "v": "0"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "705.6"
+                          }
+                        }
+                      ],
+                      "source": {
+                        "v": "",
+                        "t": "s"
+                      },
+                      "to": [
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.4",
+                            "v": "2822.4"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH-MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "9736.48"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH",
+                            "v": "10054"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.4",
+                            "v": "2822.4"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH",
+                            "v": "10054"
+                          },
+                          "y": {
+                            "f": "HEIGHT-MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "6738.48"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.6",
+                            "v": "4233.599999999999"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "7056"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "317.52000000000004"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "7056"
+                          }
+                        },
+                        {
+                          "x": {
+                            "v": "0"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.6",
+                            "v": "4233.599999999999"
+                          }
+                        },
+                        {
+                          "x": {
+                            "v": "0"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "317.52000000000004"
+                          }
+                        }
+                      ],
+                      "from": [
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "317.52000000000004"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.6",
+                            "v": "4233.599999999999"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH",
+                            "v": "10054"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "317.52000000000004"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH",
+                            "v": "10054"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.6",
+                            "v": "4233.599999999999"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH-MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "9736.48"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "7056"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.4",
+                            "v": "2822.4"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "7056"
+                          }
+                        },
+                        {
+                          "x": {
+                            "v": "0"
+                          },
+                          "y": {
+                            "f": "HEIGHT-MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "6738.48"
+                          }
+                        },
+                        {
+                          "x": {
+                            "v": "0"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.4",
+                            "v": "2822.4"
+                          }
+                        }
+                      ]
+                    },
+                    "format": {
+                      "linecolor": {
+                        "v": "%23b7b7b7",
+                        "t": "s"
+                      }
+                    }
+                  },
+                  {
+                    "id": 256146114124,
+                    "itemType": "text",
+                    "x": {
+                      "v": "5027"
+                    },
+                    "y": {
+                      "v": "3528"
+                    },
+                    "localX": {
+                      "f": "WIDTH*0.5",
+                      "v": "4371"
+                    },
+                    "localY": {
+                      "f": "HEIGHT*0.5",
+                      "v": "3248.801817893982"
+                    },
+                    "width": {
+                      "v": "8742"
+                    },
+                    "height": {
+                      "v": "6497.603635787964"
+                    },
+                    "parent": 286052422285,
+                    "shape": {
+                      "type": "rectangle"
+                    },
+                    "format": {
+                      "linestyle": {
+                        "v": "0"
+                      },
+                      "fillstyle": {
+                        "v": "0"
+                      }
+                    },
+                    "textformat": {
+                      "fontname": {
+                        "v": "Arial",
+                        "t": "s"
+                      },
+                      "fontsize": {
+                        "v": "12"
+                      },
+                      "fontcolor": {
+                        "v": "%23434343",
+                        "t": "s"
+                      },
+                      "richtext": {
+                        "v": "false",
+                        "t": "b"
+                      }
+                    },
+                    "attributes": {
+                      "sizemode": {
+                        "v": "2"
+                      }
+                    },
+                    "text": {
+                      "v": "~3Cp~3EThis%20is%20an%20example%20setup%20to%20make%20you~26nbsp%3Bcomfortable%20with%20Streamsheets.~26nbsp%3BThere%20are%202%20apps%20that%20play%20together.~26nbsp%3BThis%20App%20simulates%20a%20Wind%20Turbine%20and~26nbsp%3Bserves%20as%20a%20data%20source.~26nbsp%3BIt%20creates%20and%20sends~26nbsp%3Bdata%20continuously.%20You%20can%20see%20its%20cycle%20time%20when~26nbsp%3Bclicking%20on%20the%20~22Cycle%20and%20Interval~22%20Icon%20in%20the%20top%20bar.~26nbsp%3BThe%20~22Dashboard~22%20app%20receives%20the%20data%20and%20adds%20calculation%20logic%20and%20visualization.%20In%20this%20example%2C%20both%20apps%20communicate~26nbsp%3Bvia%20MQTT%20through%20the%20integrated%20Mosquitto%20MQTT%20Broker~3C%2Fp~3E",
+                      "t": "s"
+                    }
+                  },
+                  {
+                    "id": 695592121162,
+                    "itemType": "node",
+                    "x": {
+                      "v": "10669"
+                    },
+                    "y": {
+                      "v": "3912"
+                    },
+                    "localX": {
+                      "f": "WIDTH*0.5",
+                      "v": "1744"
+                    },
+                    "localY": {
+                      "f": "HEIGHT*0.5",
+                      "v": "335.5"
+                    },
+                    "width": {
+                      "v": "3488"
+                    },
+                    "height": {
+                      "v": "671"
+                    },
+                    "parent": 1028,
+                    "reshape": [
+                      {
+                        "x": {
+                          "v": "0.1"
+                        },
+                        "y": {
+                          "v": "0"
+                        },
+                        "name": "ROUND",
+                        "xType": 14,
+                        "yType": -1,
+                        "xMax": 0.5
+                      }
+                    ],
+                    "shape": {
+                      "type": "bezier",
+                      "points": [
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "67.10000000000001"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH-MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "3420.9"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH",
+                            "v": "3488"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "67.10000000000001"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH",
+                            "v": "3488"
+                          },
+                          "y": {
+                            "f": "HEIGHT-ROUND*MIN(WIDTH%2CHEIGHT)",
+                            "v": "603.9"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH-MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "3420.9"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "671"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "67.10000000000001"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "671"
+                          }
+                        },
+                        {
+                          "x": {
+                            "v": "0"
+                          },
+                          "y": {
+                            "f": "HEIGHT-MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "603.9"
+                          }
+                        },
+                        {
+                          "x": {
+                            "v": "0"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "67.10000000000001"
+                          }
+                        }
+                      ],
+                      "source": {
+                        "v": "",
+                        "t": "s"
+                      },
+                      "to": [
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.4",
+                            "v": "268.40000000000003"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH-MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "3457.805"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH",
+                            "v": "3488"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.4",
+                            "v": "268.40000000000003"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH",
+                            "v": "3488"
+                          },
+                          "y": {
+                            "f": "HEIGHT-MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "640.805"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.6",
+                            "v": "402.59999999999997"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "671"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "30.195000000000004"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "671"
+                          }
+                        },
+                        {
+                          "x": {
+                            "v": "0"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.6",
+                            "v": "402.59999999999997"
+                          }
+                        },
+                        {
+                          "x": {
+                            "v": "0"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "30.195000000000004"
+                          }
+                        }
+                      ],
+                      "from": [
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "30.195000000000004"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.6",
+                            "v": "402.59999999999997"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH",
+                            "v": "3488"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "30.195000000000004"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH",
+                            "v": "3488"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.6",
+                            "v": "402.59999999999997"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH-MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "3457.805"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "671"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.4",
+                            "v": "268.40000000000003"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "671"
+                          }
+                        },
+                        {
+                          "x": {
+                            "v": "0"
+                          },
+                          "y": {
+                            "f": "HEIGHT-MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "640.805"
+                          }
+                        },
+                        {
+                          "x": {
+                            "v": "0"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.4",
+                            "v": "268.40000000000003"
+                          }
+                        }
+                      ]
+                    },
+                    "format": {
+                      "linecolor": {
+                        "v": "%23ff9900",
+                        "t": "s"
+                      }
+                    }
+                  },
+                  {
+                    "id": 108318191013,
+                    "itemType": "text",
+                    "x": {
+                      "v": "1744"
+                    },
+                    "y": {
+                      "v": "336"
+                    },
+                    "localX": {
+                      "f": "WIDTH*0.5",
+                      "v": "1670"
+                    },
+                    "localY": {
+                      "f": "HEIGHT*0.5",
+                      "v": "414.023930033048"
+                    },
+                    "width": {
+                      "v": "3340"
+                    },
+                    "height": {
+                      "v": "828.047860066096"
+                    },
+                    "parent": 695592121162,
+                    "shape": {
+                      "type": "rectangle"
+                    },
+                    "format": {
+                      "linestyle": {
+                        "v": "0"
+                      },
+                      "fillstyle": {
+                        "v": "0"
+                      }
+                    },
+                    "textformat": {
+                      "richtext": {
+                        "v": "false",
+                        "t": "b"
+                      },
+                      "fontname": {
+                        "v": "Arial",
+                        "t": "s"
+                      },
+                      "fontsize": {
+                        "v": "10"
+                      },
+                      "fontcolor": {
+                        "v": "%23434343",
+                        "t": "s"
+                      }
+                    },
+                    "attributes": {
+                      "sizemode": {
+                        "v": "2"
+                      }
+                    },
+                    "text": {
+                      "v": "~3Cp~3EW~3Cspan%20style%3D~22font-size%3A%2010pt%3B~22~3Eind%20simulation~3C%2Fspan~3E~3C%2Fp~3E",
+                      "t": "s"
+                    }
+                  },
+                  {
+                    "id": 71700905990,
+                    "itemType": "node",
+                    "x": {
+                      "f": "S1!B22",
+                      "v": "14000",
+                      "msc": true,
+                      "sv": 14000,
+                      "ref": "S1!B22"
+                    },
+                    "y": {
+                      "f": "S1!B23",
+                      "v": "5500",
+                      "msc": true,
+                      "sv": 5500,
+                      "ref": "S1!B23"
+                    },
+                    "localX": {
+                      "f": "WIDTH*0.5",
+                      "v": "253.5"
+                    },
+                    "localY": {
+                      "v": "0"
+                    },
+                    "width": {
+                      "v": "507"
+                    },
+                    "height": {
+                      "v": "7688"
+                    },
+                    "parent": 1028,
+                    "reshape": [
+                      {
+                        "x": {
+                          "v": "0.2"
+                        },
+                        "y": {
+                          "v": "0"
+                        },
+                        "name": "TOP",
+                        "xType": 13,
+                        "yType": -1,
+                        "xMax": 0.5
+                      }
+                    ],
+                    "shape": {
+                      "type": "polygon",
+                      "points": [
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*TOP",
+                            "v": "101.4"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH-MIN(WIDTH%2CHEIGHT)*TOP",
+                            "v": "405.6"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH",
+                            "v": "507"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "7688"
+                          }
+                        },
+                        {
+                          "x": {
+                            "v": "0"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "7688"
+                          }
+                        }
+                      ],
+                      "source": {
+                        "v": "",
+                        "t": "s"
+                      }
+                    },
+                    "format": {
+                      "fillcolor": {
+                        "v": "%23e1e1e1",
+                        "t": "s"
+                      }
+                    },
+                    "attributes": {
+                      "sheetname": {
+                        "v": "ID4",
+                        "t": "s"
+                      }
+                    }
+                  },
+                  {
+                    "id": 610129512551,
+                    "itemType": "node",
+                    "x": {
+                      "v": "12000"
+                    },
+                    "y": {
+                      "v": "5881"
+                    },
+                    "localX": {
+                      "f": "WIDTH*0.5",
+                      "v": "319.5"
+                    },
+                    "localY": {
+                      "f": "HEIGHT*0.5",
+                      "v": "2712.5"
+                    },
+                    "width": {
+                      "v": "639"
+                    },
+                    "height": {
+                      "v": "5425"
+                    },
+                    "parent": 1028,
+                    "angle": {
+                      "v": "3.23"
+                    },
+                    "shape": {
+                      "type": "polygon",
+                      "points": [],
+                      "source": {
+                        "v": "",
+                        "t": "s"
+                      }
+                    },
+                    "attributes": {
+                      "sheetname": {
+                        "v": "I2",
+                        "t": "s"
+                      },
+                      "scaletype": {
+                        "v": "top",
+                        "t": "s"
+                      },
+                      "container": {
+                        "v": "true",
+                        "t": "b"
+                      }
+                    }
+                  },
+                  {
+                    "id": 559994195548,
+                    "itemType": "node",
+                    "x": {
+                      "f": "S1!B22",
+                      "v": "14000",
+                      "msc": true,
+                      "sv": 14000,
+                      "ref": "S1!B22"
+                    },
+                    "y": {
+                      "f": "S1!B23",
+                      "v": "5500",
+                      "msc": true,
+                      "sv": 5500,
+                      "ref": "S1!B23"
+                    },
+                    "localX": {
+                      "f": "WIDTH*0.5",
+                      "v": "211.5"
+                    },
+                    "localY": {
+                      "f": "HEIGHT",
+                      "v": "5371"
+                    },
+                    "width": {
+                      "v": "423"
+                    },
+                    "height": {
+                      "v": "5371"
+                    },
+                    "parent": 1028,
+                    "angle": {
+                      "f": "S1!B13",
+                      "v": "1.1467949694187725",
+                      "msc": true,
+                      "sv": 1.2637320293042993,
+                      "ref": "S1!B13"
+                    },
+                    "reshape": [
+                      {
+                        "x": {
+                          "v": "0.2"
+                        },
+                        "y": {
+                          "v": "0"
+                        },
+                        "name": "TOP",
+                        "xType": 13,
+                        "yType": -1,
+                        "xMax": 0.5
+                      }
+                    ],
+                    "shape": {
+                      "type": "polygon",
+                      "points": [
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*TOP",
+                            "v": "84.60000000000001"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH-MIN(WIDTH%2CHEIGHT)*TOP",
+                            "v": "338.4"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH",
+                            "v": "423"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "5371"
+                          }
+                        },
+                        {
+                          "x": {
+                            "v": "0"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "5371"
+                          }
+                        }
+                      ],
+                      "source": {
+                        "v": "",
+                        "t": "s"
+                      }
+                    },
+                    "format": {
+                      "fillcolor": {
+                        "v": "%23f4f4f4",
+                        "t": "s"
+                      }
+                    },
+                    "attributes": {
+                      "sheetname": {
+                        "v": "ID1",
+                        "t": "s"
+                      }
+                    }
+                  },
+                  {
+                    "id": 711599299115,
+                    "itemType": "node",
+                    "x": {
+                      "f": "S1!B22",
+                      "v": "14000",
+                      "msc": true,
+                      "sv": 14000,
+                      "ref": "S1!B22"
+                    },
+                    "y": {
+                      "f": "S1!B23",
+                      "v": "5500",
+                      "msc": true,
+                      "sv": 5500,
+                      "ref": "S1!B23"
+                    },
+                    "localX": {
+                      "f": "WIDTH*0.5",
+                      "v": "211.5"
+                    },
+                    "localY": {
+                      "f": "HEIGHT",
+                      "v": "5371"
+                    },
+                    "width": {
+                      "v": "423"
+                    },
+                    "height": {
+                      "v": "5371"
+                    },
+                    "parent": 1028,
+                    "angle": {
+                      "f": "S1!B13%2BPI()*2%2F3",
+                      "v": "3.2411900718119675",
+                      "msc": true,
+                      "sv": 3.3581271316974943
+                    },
+                    "reshape": [
+                      {
+                        "x": {
+                          "v": "0.2"
+                        },
+                        "y": {
+                          "v": "0"
+                        },
+                        "name": "TOP",
+                        "xType": 13,
+                        "yType": -1,
+                        "xMax": 0.5
+                      }
+                    ],
+                    "shape": {
+                      "type": "polygon",
+                      "points": [
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*TOP",
+                            "v": "84.60000000000001"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH-MIN(WIDTH%2CHEIGHT)*TOP",
+                            "v": "338.4"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH",
+                            "v": "423"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "5371"
+                          }
+                        },
+                        {
+                          "x": {
+                            "v": "0"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "5371"
+                          }
+                        }
+                      ],
+                      "source": {
+                        "v": "",
+                        "t": "s"
+                      }
+                    },
+                    "format": {
+                      "fillcolor": {
+                        "v": "%23f4f4f4",
+                        "t": "s"
+                      }
+                    },
+                    "attributes": {
+                      "sheetname": {
+                        "v": "ID2",
+                        "t": "s"
+                      }
+                    }
+                  },
+                  {
+                    "id": 555450515995,
+                    "itemType": "node",
+                    "x": {
+                      "f": "S1!B22",
+                      "v": "14000",
+                      "msc": true,
+                      "sv": 14000,
+                      "ref": "S1!B22"
+                    },
+                    "y": {
+                      "f": "S1!B23",
+                      "v": "5500",
+                      "msc": true,
+                      "sv": 5500,
+                      "ref": "S1!B23"
+                    },
+                    "localX": {
+                      "f": "WIDTH*0.5",
+                      "v": "211.5"
+                    },
+                    "localY": {
+                      "f": "HEIGHT",
+                      "v": "5371"
+                    },
+                    "width": {
+                      "v": "423"
+                    },
+                    "height": {
+                      "v": "5371"
+                    },
+                    "parent": 1028,
+                    "angle": {
+                      "f": "S1!B13%2BPI()*4%2F3",
+                      "v": "5.335585174205163",
+                      "msc": true,
+                      "sv": 5.45252223409069
+                    },
+                    "reshape": [
+                      {
+                        "x": {
+                          "v": "0.2"
+                        },
+                        "y": {
+                          "v": "0"
+                        },
+                        "name": "TOP",
+                        "xType": 13,
+                        "yType": -1,
+                        "xMax": 0.5
+                      }
+                    ],
+                    "shape": {
+                      "type": "polygon",
+                      "points": [
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*TOP",
+                            "v": "84.60000000000001"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH-MIN(WIDTH%2CHEIGHT)*TOP",
+                            "v": "338.4"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH",
+                            "v": "423"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "5371"
+                          }
+                        },
+                        {
+                          "x": {
+                            "v": "0"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "5371"
+                          }
+                        }
+                      ],
+                      "source": {
+                        "v": "",
+                        "t": "s"
+                      }
+                    },
+                    "format": {
+                      "fillcolor": {
+                        "v": "%23f4f4f4",
+                        "t": "s"
+                      }
+                    },
+                    "attributes": {
+                      "sheetname": {
+                        "v": "ID3",
+                        "t": "s"
+                      }
+                    }
+                  },
+                  {
+                    "id": 940878734972,
+                    "itemType": "node",
+                    "x": {
+                      "f": "S1!B22",
+                      "v": "14000",
+                      "msc": true,
+                      "sv": 14000,
+                      "ref": "S1!B22"
+                    },
+                    "y": {
+                      "f": "S1!B23",
+                      "v": "5500",
+                      "msc": true,
+                      "sv": 5500,
+                      "ref": "S1!B23"
+                    },
+                    "localX": {
+                      "f": "WIDTH*0.5",
+                      "v": "397"
+                    },
+                    "localY": {
+                      "f": "HEIGHT*0.5",
+                      "v": "397"
+                    },
+                    "width": {
+                      "v": "794"
+                    },
+                    "height": {
+                      "v": "794"
+                    },
+                    "parent": 1028,
+                    "shape": {
+                      "type": "ellipse"
+                    },
+                    "attributes": {
+                      "sheetname": {
+                        "v": "ID5",
+                        "t": "s"
+                      }
+                    }
+                  },
+                  {
+                    "id": 563816119852,
+                    "itemType": "node",
+                    "x": {
+                      "v": "24314.875"
+                    },
+                    "y": {
+                      "v": "1962.0833333333321"
+                    },
+                    "localX": {
+                      "f": "WIDTH*0.5",
+                      "v": "5027"
+                    },
+                    "localY": {
+                      "f": "HEIGHT*0.5",
+                      "v": "1014.5"
+                    },
+                    "width": {
+                      "v": "10054"
+                    },
+                    "height": {
+                      "v": "2029"
+                    },
+                    "parent": 1028,
+                    "reshape": [
+                      {
+                        "x": {
+                          "v": "0.1"
+                        },
+                        "y": {
+                          "v": "0"
+                        },
+                        "name": "ROUND",
+                        "xType": 14,
+                        "yType": -1,
+                        "xMax": 0.5
+                      }
+                    ],
+                    "shape": {
+                      "type": "bezier",
+                      "points": [
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "202.9"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH-MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "9851.1"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH",
+                            "v": "10054"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "202.9"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH",
+                            "v": "10054"
+                          },
+                          "y": {
+                            "f": "HEIGHT-ROUND*MIN(WIDTH%2CHEIGHT)",
+                            "v": "1826.1"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH-MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "9851.1"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "2029"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "202.9"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "2029"
+                          }
+                        },
+                        {
+                          "x": {
+                            "v": "0"
+                          },
+                          "y": {
+                            "f": "HEIGHT-MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "1826.1"
+                          }
+                        },
+                        {
+                          "x": {
+                            "v": "0"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "202.9"
+                          }
+                        }
+                      ],
+                      "source": {
+                        "v": "",
+                        "t": "s"
+                      },
+                      "to": [
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.4",
+                            "v": "811.6"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH-MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "9962.695"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH",
+                            "v": "10054"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.4",
+                            "v": "811.6"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH",
+                            "v": "10054"
+                          },
+                          "y": {
+                            "f": "HEIGHT-MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "1937.695"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.6",
+                            "v": "1217.3999999999999"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "2029"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "91.305"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "2029"
+                          }
+                        },
+                        {
+                          "x": {
+                            "v": "0"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.6",
+                            "v": "1217.3999999999999"
+                          }
+                        },
+                        {
+                          "x": {
+                            "v": "0"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "91.305"
+                          }
+                        }
+                      ],
+                      "from": [
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "91.305"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.6",
+                            "v": "1217.3999999999999"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH",
+                            "v": "10054"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "91.305"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH",
+                            "v": "10054"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.6",
+                            "v": "1217.3999999999999"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH-MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "9962.695"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "2029"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.4",
+                            "v": "811.6"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "2029"
+                          }
+                        },
+                        {
+                          "x": {
+                            "v": "0"
+                          },
+                          "y": {
+                            "f": "HEIGHT-MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "1937.695"
+                          }
+                        },
+                        {
+                          "x": {
+                            "v": "0"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.4",
+                            "v": "811.6"
+                          }
+                        }
+                      ]
+                    },
+                    "format": {
+                      "linecolor": {
+                        "v": "%23b7b7b7",
+                        "t": "s"
+                      }
+                    }
+                  },
+                  {
+                    "id": 296151151911,
+                    "itemType": "text",
+                    "x": {
+                      "v": "5027"
+                    },
+                    "y": {
+                      "v": "1014"
+                    },
+                    "localX": {
+                      "f": "WIDTH*0.5",
+                      "v": "4371"
+                    },
+                    "localY": {
+                      "f": "HEIGHT*0.5",
+                      "v": "710.1490386327108"
+                    },
+                    "width": {
+                      "v": "8742"
+                    },
+                    "height": {
+                      "v": "1420.2980772654216"
+                    },
+                    "parent": 563816119852,
+                    "shape": {
+                      "type": "rectangle"
+                    },
+                    "format": {
+                      "linestyle": {
+                        "v": "0"
+                      },
+                      "fillstyle": {
+                        "v": "0"
+                      }
+                    },
+                    "textformat": {
+                      "richtext": {
+                        "v": "false",
+                        "t": "b"
+                      },
+                      "fontname": {
+                        "v": "Arial",
+                        "t": "s"
+                      },
+                      "fontsize": {
+                        "v": "12"
+                      },
+                      "fontcolor": {
+                        "v": "%23434343",
+                        "t": "s"
+                      }
+                    },
+                    "attributes": {
+                      "sizemode": {
+                        "v": "2"
+                      }
+                    },
+                    "text": {
+                      "v": "~3Cp~3EStart%20application%20by%20clicking%20~22play~22%20on%20the%20controls%20in%20the%20top%20right%20corner.~3C%2Fp~3E",
+                      "t": "s"
+                    }
+                  },
+                  {
+                    "id": 613636655371,
+                    "itemType": "node",
+                    "x": {
+                      "v": "10669"
+                    },
+                    "y": {
+                      "v": "11402"
+                    },
+                    "localX": {
+                      "f": "WIDTH*0.5",
+                      "v": "1744"
+                    },
+                    "localY": {
+                      "f": "HEIGHT*0.5",
+                      "v": "335.5"
+                    },
+                    "width": {
+                      "v": "3488"
+                    },
+                    "height": {
+                      "v": "671"
+                    },
+                    "parent": 1028,
+                    "reshape": [
+                      {
+                        "x": {
+                          "v": "0.1"
+                        },
+                        "y": {
+                          "v": "0"
+                        },
+                        "name": "ROUND",
+                        "xType": 14,
+                        "yType": -1,
+                        "xMax": 0.5
+                      }
+                    ],
+                    "shape": {
+                      "type": "bezier",
+                      "points": [
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "67.10000000000001"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH-MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "3420.9"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH",
+                            "v": "3488"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "67.10000000000001"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH",
+                            "v": "3488"
+                          },
+                          "y": {
+                            "f": "HEIGHT-ROUND*MIN(WIDTH%2CHEIGHT)",
+                            "v": "603.9"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH-MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "3420.9"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "671"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "67.10000000000001"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "671"
+                          }
+                        },
+                        {
+                          "x": {
+                            "v": "0"
+                          },
+                          "y": {
+                            "f": "HEIGHT-MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "603.9"
+                          }
+                        },
+                        {
+                          "x": {
+                            "v": "0"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND",
+                            "v": "67.10000000000001"
+                          }
+                        }
+                      ],
+                      "source": {
+                        "v": "",
+                        "t": "s"
+                      },
+                      "to": [
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.4",
+                            "v": "268.40000000000003"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH-MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "3457.805"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH",
+                            "v": "3488"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.4",
+                            "v": "268.40000000000003"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH",
+                            "v": "3488"
+                          },
+                          "y": {
+                            "f": "HEIGHT-MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "640.805"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.6",
+                            "v": "402.59999999999997"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "671"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "30.195000000000004"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "671"
+                          }
+                        },
+                        {
+                          "x": {
+                            "v": "0"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.6",
+                            "v": "402.59999999999997"
+                          }
+                        },
+                        {
+                          "x": {
+                            "v": "0"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "30.195000000000004"
+                          }
+                        }
+                      ],
+                      "from": [
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "30.195000000000004"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.6",
+                            "v": "402.59999999999997"
+                          },
+                          "y": {
+                            "v": "0"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH",
+                            "v": "3488"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "30.195000000000004"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH",
+                            "v": "3488"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.6",
+                            "v": "402.59999999999997"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "WIDTH-MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "3457.805"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "671"
+                          }
+                        },
+                        {
+                          "x": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.4",
+                            "v": "268.40000000000003"
+                          },
+                          "y": {
+                            "f": "HEIGHT",
+                            "v": "671"
+                          }
+                        },
+                        {
+                          "x": {
+                            "v": "0"
+                          },
+                          "y": {
+                            "f": "HEIGHT-MIN(WIDTH%2CHEIGHT)*ROUND*0.45",
+                            "v": "640.805"
+                          }
+                        },
+                        {
+                          "x": {
+                            "v": "0"
+                          },
+                          "y": {
+                            "f": "MIN(WIDTH%2CHEIGHT)*0.4",
+                            "v": "268.40000000000003"
+                          }
+                        }
+                      ]
+                    },
+                    "format": {
+                      "linecolor": {
+                        "v": "%23ff9900",
+                        "t": "s"
+                      }
+                    }
+                  },
+                  {
+                    "id": 646066035136,
+                    "itemType": "text",
+                    "x": {
+                      "v": "1744"
+                    },
+                    "y": {
+                      "v": "336"
+                    },
+                    "localX": {
+                      "f": "WIDTH*0.5",
+                      "v": "1670"
+                    },
+                    "localY": {
+                      "f": "HEIGHT*0.5",
+                      "v": "414.023930033048"
+                    },
+                    "width": {
+                      "v": "3340"
+                    },
+                    "height": {
+                      "v": "828.047860066096"
+                    },
+                    "parent": 613636655371,
+                    "shape": {
+                      "type": "rectangle"
+                    },
+                    "format": {
+                      "linestyle": {
+                        "v": "0"
+                      },
+                      "fillstyle": {
+                        "v": "0"
+                      }
+                    },
+                    "textformat": {
+                      "richtext": {
+                        "v": "false",
+                        "t": "b"
+                      },
+                      "fontname": {
+                        "v": "Arial",
+                        "t": "s"
+                      },
+                      "fontsize": {
+                        "v": "10"
+                      },
+                      "fontcolor": {
+                        "v": "%23434343",
+                        "t": "s"
+                      }
+                    },
+                    "attributes": {
+                      "sizemode": {
+                        "v": "2"
+                      }
+                    },
+                    "text": {
+                      "v": "~3Cp~3EWind%20turbine%20input~3C%2Fp~3E",
+                      "t": "s"
+                    }
+                  }
+                ],
+                "timestamp": 0,
+                "version": 1,
+                "changed": 362062147171
+              },
+              "properties": {
+                "cols": [],
+                "rows": [],
+                "cells": []
+              },
+              "settings": {
+                "maxchars": -1,
+                "minrow": 0,
+                "maxrow": 100,
+                "mincol": -2,
+                "maxcol": 50,
+                "protected": false,
+                "showGrid": true,
+                "showHeader": true
+              }
+            },
+            "trigger": {
+              "type": "continuously",
+              "repeat": "once"
+            }
+          },
+          {
+            "id": "S1eUpePnxv",
+            "name": "S2",
+            "loop": {
+              "path": "",
+              "enabled": false,
+              "recursively": false
+            },
+            "inbox": {
+              "max": 20,
+              "type": "Inbox",
+              "id": "rkKPxSAXqP",
+              "stream": {
+                "id": "CONSUMER_MQTT",
+                "name": "MQTT_Consumer"
+              }
+            },
+            "sheet": {
+              "cells": {},
+              "namedCells": {},
+              "shapes": {
+                "shapes": [],
+                "timestamp": 0,
+                "version": 1,
+                "changed": 876466033234
+              },
+              "properties": {
+                "cols": [],
+                "rows": [],
+                "cells": []
+              },
+              "settings": {
+                "maxchars": -1,
+                "minrow": 1,
+                "maxrow": 100,
+                "mincol": -2,
+                "maxcol": 50,
+                "protected": false
+              }
+            },
+            "trigger": {
+              "type": "continuously",
+              "repeat": "once"
+            }
+          }
+        ],
+        "settings": {
+          "view": {
+            "maximize": "r1zTAD66BE",
+            "showInbox": false,
+            "showGrid": false,
+            "showHeader": false,
+            "showOutbox": false,
+            "allowZoom": false,
+            "allowScroll": true
+          },
+          "locale": "en",
+          "isOPCUA": false,
+          "cycletime": 100,
+          "isCycleRegulated": false
+        },
+        "extensionSettings": {
+          "webhook_server": {
+            "id": "HyfJ7FEYY",
+            "enabled": false,
+            "streamsheetId": "r1zTAD66BE"
+          }
+        },
+        "className": "Machine",
+        "scope": {
+          "id": "root"
+        },
+        "namedCells": {
+          "|HTTP_Client_Producer": {
+            "value": {
+              "id": "PRODUCER_HTTP",
+              "name": "HTTP_Client_Producer",
+              "type": "producer",
+              "state": "connected",
+              "timestamp": 1638272153542,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|Webhook": {
+            "value": {
+              "id": "CONSUMER_WEBHOOK",
+              "name": "Webhook",
+              "type": "stream",
+              "state": "connected",
+              "timestamp": 1638272153543,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|Wind_Data": {
+            "value": {
+              "id": "HkZRIJtchH",
+              "name": "Wind_Data",
+              "type": "stream",
+              "state": "connected",
+              "timestamp": 1638273572955,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|MQTT_Consumer": {
+            "value": {
+              "id": "CONSUMER_MQTT",
+              "name": "MQTT_Consumer",
+              "type": "stream",
+              "state": "connected",
+              "timestamp": 1638273573034,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|MQTT_Producer": {
+            "value": {
+              "id": "PRODUCER_MQTT",
+              "name": "MQTT_Producer",
+              "type": "producer",
+              "state": "connected",
+              "timestamp": 1638273573050,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          }
+        },
+        "previewImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPUAAABkCAYAAABei3aDAAAEqklEQVR4Xu3c0W0cMQyEYacVt+Ba3KR7cU0JHCAxAhxONH2z3Gi/vEo6ajmr+SmtlR9vb28/n/yTARnYJgM/Phb16+tr6YHe39+fXl5eSn0f2UncR2bz/m/J9TG5TubZor6jYTLx916dqbgfc5qKLe7jzMSitqj/yYDF9bjFNWXcFrVFbVFvtqW0qC1qi9qidlCWLtCmSmB76rSyn7+f1BipkRqpdyT18/PzcRYlkgzIQDQDSI3USL0jqf3xye2Vndz3TH3uWCHias+84/MiNVIjNVI7/V7R7rvtU/Rw+v1d5erjkxojNVIjNVIjdd2Pez2TLr6a0VRscVfK1Nt/k9onrXrC9JSBs2dA+a38Vn4rv5XfaaeeKkUdlKWV/fz9pMZIjdRIjdRInfbzpIuv5j4VW9yVMvV2pEZqpEZqpK57Zq/nFLXsqXt6dUYlNUZqpEbqHUntO3XHa42RgXNmAKmRGql3JLWrl7dXdnLfc8/jp+LaUx9H3qTGSI3USI3UTr/Tfp508dXcp2KLu1Km3o7USI3USI3Udc/s9Zyilj11T6/OqKTGrl52FDFGBk6cAeW38lv5rfxWfqdNOlmareY+FVvclTL1dqRGaqRGaqSue2av5xS1HJT19OqMSmqM1EiN1EiN1B1n/sqYpIuv5jEVW9yVMvV2pEZqpN6R1K5e1l1QTxk4ewaQGqmRekdSu3p5e2VfbZ/n9Ps4BiffLaRGaqRGaqffaT9Puvhq7lOxxV0pU29HaqRGaqRG6rpn9npOUcueuqdXZ1RSY1cvO4oYIwMnzoDyW/mt/FZ+K7/TJp0szVZzn4ot7kqZejtSIzVSIzVS1z2z13OKWg7Kenp1RiU1RmqkRmqkRuqOM39lTNLFV/OYii3uSpl6O1IjNVLvSGpXL+suqKcMnD0DSI3USL0jqV29vL2yr7bPc/p9HIOT7xZSIzVSI7XT77SfJ118Nfep2OKulKm3IzVSIzVSI3XdM3s9p6hlT93TqzMqqbGrlx1FjJGBE2dA+a38Vn4rv5XfaZNOlmaruU/FFnelTL0dqZEaqZEaqeue2es5RS0HZT29OqOSGiM1UiM1UiN1x5m/Mibp4qt5TMUWd6VMvR2pkRqpdyS1q5d1F9RTBs6eAaRGaqTekdSuXt5e2Vfb5zn9Po7ByXcLqZEaqZHa6Xfaz5Muvpr7VGxxV8rU25EaqZEaqZG67pm9nlPUsqfu6dUZldQYqZEaqXckte/UHa81RgbOmQGkRmqk3pHUvlP7Tv0nA8m93j2uifs46iM1UiM1Ujv9fpynnqtCcPqdVvbz95OVCVIjNVIjNVKn/Tzp4qu5T8UWd6VMvd1/EVzPlZ4y8F9kQPmt/FZ+K7+V32m7nipFHZSllXVQ9jcDUy/51eJa1Bb1YRm42uKael6L+rBX+impsT21PbU9tT21PXXaz5Muvpr7VGxxV8rU25EaqZF6R1K7ell3QT1l4OwZQGqkRuodSe3q5e2VfbV9ntPv4xicfLeQGqmRGqmdfqf9POniq7lPxRZ3pUy9HamRGqmRGqnrntnrOUUte+qeXp1RSY1dvewoYowMnDgDym/lt/J7s/L7F6tVlphmNkebAAAAAElFTkSuQmCC",
+        "defproperties": {
+          "attributes": {
+            "cell": {
+              "level": 0,
+              "protected": true,
+              "visible": true,
+              "key": false
+            },
+            "sheet": {
+              "defaultsectionsize": 2000,
+              "initialsection": 0
+            }
+          },
+          "formats": {
+            "styles": {
+              "brightness": 0,
+              "fillstyle": 0,
+              "fillcolor": "#FFFFFF",
+              "gradientcolor": "#CCCCCC",
+              "gradientcolorstops": "",
+              "gradientangle": 0,
+              "gradienttype": 0,
+              "gradientoffset_x": 0,
+              "gradientoffset_y": 0,
+              "linecolor": "#000000",
+              "linewidth": -1,
+              "linestyle": 1,
+              "lineshape": 0,
+              "linetransparency": 100,
+              "pattern": "",
+              "patternstyle": 0,
+              "transparency": 100,
+              "leftbordercolor": "#000000",
+              "leftborderstyle": 0,
+              "leftborderwidth": 1,
+              "topbordercolor": "#000000",
+              "topborderstyle": 0,
+              "topborderwidth": 1,
+              "rightbordercolor": "#000000",
+              "rightborderstyle": 0,
+              "rightborderwidth": 1,
+              "bottombordercolor": "#000000",
+              "bottomborderstyle": 0,
+              "bottomborderwidth": 1
+            },
+            "text": {
+              "baseline": "alphabetic",
+              "valign": 2,
+              "halign": 3,
+              "fontsize": 9,
+              "fontname": "Verdana",
+              "fontcolor": "#000000",
+              "fontstyle": 0,
+              "vposition": 3,
+              "hpostion": 3,
+              "richtext": true,
+              "lineheight": 1.2,
+              "numberformat": "General",
+              "localculture": "general"
+            }
+          }
+        }
+      },
+      "graph": {
+        "id": "rJvDxrCm5P",
+        "graphdef": {
+          "version": "3",
+          "uniqueid": "1",
+          "o-attributes": {
+            "o-maximizesheet": {
+              "v": "S1",
+              "t": "s"
+            }
+          },
+          "o-outbox": {
+            "split": "5000",
+            "width": "5000"
+          },
+          "a-graphitem": [
+            {
+              "id": "2000",
+              "visible": "1",
+              "o-attributes": {
+                "o-sheetid": {
+                  "v": "S1eUpePnxv",
+                  "t": "s"
+                },
+                "o-step": {
+                  "v": "1",
+                  "t": "s"
+                }
+              },
+              "o-pin": {
+                "o-p": {
+                  "o-x": {
+                    "v": "9528"
+                  },
+                  "o-y": {
+                    "v": "6967"
+                  }
+                },
+                "o-lp": {
+                  "o-x": {
+                    "f": "!WIDTH*0.5",
+                    "v": "9028"
+                  },
+                  "o-y": {
+                    "f": "!HEIGHT*0.5",
+                    "v": "6468"
+                  }
+                }
+              },
+              "o-size": {
+                "o-w": {
+                  "v": "18055"
+                },
+                "o-h": {
+                  "v": "12935"
+                }
+              },
+              "o-inbox": {
+                "split": "5000",
+                "width": "6349"
+              },
+              "o-processsheet": {
+                "o-attributes": {
+                  "o-calcondemand": {
+                    "v": "true",
+                    "t": "b"
+                  }
+                },
+                "o-name": {
+                  "v": "S2",
+                  "t": "s"
+                },
+                "o-rows": {
+                  "outline": "above"
+                },
+                "o-columns": {
+                  "outline": "above",
+                  "a-section": [
+                    {
+                      "index": "0",
+                      "size": "0",
+                      "visible": "0"
+                    },
+                    {
+                      "index": "1",
+                      "size": "700",
+                      "visible": "1"
+                    }
+                  ]
+                },
+                "o-defaultcell": {
+                  "o-cell": {}
+                },
+                "o-data": {}
+              }
+            },
+            {
+              "id": "1000",
+              "visible": "1",
+              "o-attributes": {
+                "o-sheetid": {
+                  "v": "r1zTAD66BE",
+                  "t": "s"
+                },
+                "o-inboxvisible": {
+                  "v": "false",
+                  "t": "b"
+                },
+                "o-hidemessages": {
+                  "v": "false",
+                  "t": "b"
+                }
+              },
+              "o-pin": {
+                "o-p": {
+                  "o-x": {
+                    "v": "28083"
+                  },
+                  "o-y": {
+                    "v": "6967"
+                  }
+                },
+                "o-lp": {
+                  "o-x": {
+                    "f": "!WIDTH*0.5",
+                    "v": "9028"
+                  },
+                  "o-y": {
+                    "f": "!HEIGHT*0.5",
+                    "v": "6468"
+                  }
+                }
+              },
+              "o-size": {
+                "o-w": {
+                  "v": "18055"
+                },
+                "o-h": {
+                  "v": "12935"
+                }
+              },
+              "o-inbox": {
+                "split": "5000",
+                "width": "4630"
+              },
+              "o-processsheet": {
+                "o-attributes": {
+                  "o-calcondemand": {
+                    "v": "true",
+                    "t": "b"
+                  },
+                  "o-greyifrows": {
+                    "v": "false",
+                    "t": "b"
+                  },
+                  "o-showformulas": {
+                    "v": "false",
+                    "t": "b"
+                  },
+                  "o-columns": {
+                    "v": "52"
+                  },
+                  "o-rows": {
+                    "v": "100"
+                  },
+                  "o-protected": {
+                    "v": "false",
+                    "t": "b"
+                  },
+                  "o-showheader": {
+                    "v": "true",
+                    "t": "b"
+                  },
+                  "o-showgrid": {
+                    "v": "true",
+                    "t": "b"
+                  }
+                },
+                "o-name": {
+                  "v": "S1",
+                  "t": "s"
+                },
+                "o-rows": {
+                  "outline": "above",
+                  "a-section": [
+                    {
+                      "index": "0",
+                      "size": "765",
+                      "visible": "1"
+                    }
+                  ]
+                },
+                "o-columns": {
+                  "outline": "above",
+                  "a-section": [
+                    {
+                      "index": "0",
+                      "size": "0",
+                      "visible": "0"
+                    },
+                    {
+                      "index": "1",
+                      "size": "700",
+                      "visible": "1"
+                    },
+                    {
+                      "index": "2",
+                      "size": "3652",
+                      "visible": "1"
+                    },
+                    {
+                      "index": "3",
+                      "size": "2899",
+                      "visible": "1"
+                    },
+                    {
+                      "index": "13",
+                      "size": "2714",
+                      "visible": "1"
+                    },
+                    {
+                      "index": "14",
+                      "size": "3482",
+                      "visible": "1"
+                    }
+                  ]
+                },
+                "o-defaultcell": {
+                  "o-cell": {}
+                },
+                "o-data": {
+                  "a-r": [
+                    {
+                      "n": "0",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "14"
+                              },
+                              "o-fontstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "1",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "14"
+                              },
+                              "o-fontstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "2",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "5",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-f": {
+                              "o-fillcolor": {
+                                "v": "%239b9b9b",
+                                "t": "s"
+                              },
+                              "o-fillstyle": {
+                                "v": "1"
+                              }
+                            },
+                            "o-t": {
+                              "o-fontcolor": {
+                                "v": "%23ffffff",
+                                "t": "s"
+                              },
+                              "o-fontstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "4",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "14"
+                              },
+                              "o-fontstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "7",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "4",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "14"
+                              },
+                              "o-fontstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "8",
+                      "a-c": [
+                        {
+                          "n": "4",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "14"
+                              },
+                              "o-fontstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "9",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-a": {
+                              "o-key": {
+                                "v": "true",
+                                "t": "b"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "3",
+                          "o-cell": {
+                            "o-a": {
+                              "o-key": {
+                                "v": "true",
+                                "t": "b"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "10",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-numberformat": {
+                                "v": "%23%2C%23%230.00",
+                                "t": "s"
+                              },
+                              "o-localculture": {
+                                "v": "number%3B2%3Btrue",
+                                "t": "s"
+                              }
+                            },
+                            "o-a": {
+                              "o-key": {
+                                "v": "true",
+                                "t": "b"
+                              },
+                              "o-level": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "3",
+                          "o-cell": {
+                            "o-a": {
+                              "o-key": {
+                                "v": "true",
+                                "t": "b"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "11",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-numberformat": {
+                                "v": "%23%2C%23%230.00",
+                                "t": "s"
+                              },
+                              "o-localculture": {
+                                "v": "number%3B2%3Btrue",
+                                "t": "s"
+                              }
+                            },
+                            "o-a": {
+                              "o-key": {
+                                "v": "true",
+                                "t": "b"
+                              },
+                              "o-level": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "3",
+                          "o-cell": {
+                            "o-a": {
+                              "o-key": {
+                                "v": "true",
+                                "t": "b"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "12",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-numberformat": {
+                                "v": "%23%2C%23%230.00",
+                                "t": "s"
+                              },
+                              "o-localculture": {
+                                "v": "number%3B2%3Btrue",
+                                "t": "s"
+                              }
+                            },
+                            "o-a": {
+                              "o-key": {
+                                "v": "true",
+                                "t": "b"
+                              },
+                              "o-level": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "3",
+                          "o-cell": {
+                            "o-t": {
+                              "o-numberformat": {
+                                "v": "0.0000",
+                                "t": "s"
+                              },
+                              "o-localculture": {
+                                "v": "number%3B4%3Bfalse",
+                                "t": "s"
+                              }
+                            },
+                            "o-a": {
+                              "o-key": {
+                                "v": "true",
+                                "t": "b"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "13",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-numberformat": {
+                                "v": "%23%2C%23%230.00",
+                                "t": "s"
+                              },
+                              "o-localculture": {
+                                "v": "number%3B2%3Btrue",
+                                "t": "s"
+                              }
+                            },
+                            "o-a": {
+                              "o-key": {
+                                "v": "true",
+                                "t": "b"
+                              },
+                              "o-level": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "3",
+                          "o-cell": {
+                            "o-a": {
+                              "o-key": {
+                                "v": "true",
+                                "t": "b"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "14",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-numberformat": {
+                                "v": "0.0000",
+                                "t": "s"
+                              },
+                              "o-localculture": {
+                                "v": "number%3B4%3Bfalse",
+                                "t": "s"
+                              }
+                            },
+                            "o-a": {
+                              "o-key": {
+                                "v": "true",
+                                "t": "b"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "3",
+                          "o-cell": {
+                            "o-a": {
+                              "o-key": {
+                                "v": "true",
+                                "t": "b"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "15",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-numberformat": {
+                                "v": "0.0000",
+                                "t": "s"
+                              },
+                              "o-localculture": {
+                                "v": "number%3B4%3Bfalse",
+                                "t": "s"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "16",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "17",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "18",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-f": {
+                              "o-fillcolor": {
+                                "v": "%239b9b9b",
+                                "t": "s"
+                              },
+                              "o-fillstyle": {
+                                "v": "1"
+                              }
+                            },
+                            "o-t": {
+                              "o-fontcolor": {
+                                "v": "%23ffffff",
+                                "t": "s"
+                              },
+                              "o-fontstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "19",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-f": {
+                              "o-fillcolor": {
+                                "v": "%239b9b9b",
+                                "t": "s"
+                              },
+                              "o-fillstyle": {
+                                "v": "1"
+                              }
+                            },
+                            "o-t": {
+                              "o-fontcolor": {
+                                "v": "%23ffffff",
+                                "t": "s"
+                              },
+                              "o-fontstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "21",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-f": {
+                              "o-fillcolor": {
+                                "v": "%239b9b9b",
+                                "t": "s"
+                              },
+                              "o-fillstyle": {
+                                "v": "1"
+                              }
+                            },
+                            "o-t": {
+                              "o-fontcolor": {
+                                "v": "%23ffffff",
+                                "t": "s"
+                              },
+                              "o-fontstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "22",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-f": {
+                              "o-fillcolor": {
+                                "v": "%239b9b9b",
+                                "t": "s"
+                              },
+                              "o-fillstyle": {
+                                "v": "1"
+                              }
+                            },
+                            "o-t": {
+                              "o-fontcolor": {
+                                "v": "%23ffffff",
+                                "t": "s"
+                              },
+                              "o-fontstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "28",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontstyle": {
+                                "v": "1"
+                              }
+                            },
+                            "o-a": {
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-leftbordercolor": {
+                                "v": "%23ff9900",
+                                "t": "s"
+                              },
+                              "o-topbordercolor": {
+                                "v": "%23ff9900",
+                                "t": "s"
+                              },
+                              "o-rightbordercolor": {
+                                "v": "%23ff9900",
+                                "t": "s"
+                              },
+                              "o-bottombordercolor": {
+                                "v": "%23ff9900",
+                                "t": "s"
+                              },
+                              "o-leftborderwidth": {
+                                "v": "2"
+                              },
+                              "o-topborderwidth": {
+                                "v": "2"
+                              },
+                              "o-rightborderwidth": {
+                                "v": "2"
+                              },
+                              "o-bottomborderwidth": {
+                                "v": "2"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "29",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontstyle": {
+                                "v": "1"
+                              }
+                            },
+                            "o-a": {
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-leftbordercolor": {
+                                "v": "%23ff9900",
+                                "t": "s"
+                              },
+                              "o-topbordercolor": {
+                                "v": "%23ff9900",
+                                "t": "s"
+                              },
+                              "o-rightbordercolor": {
+                                "v": "%23ff9900",
+                                "t": "s"
+                              },
+                              "o-bottombordercolor": {
+                                "v": "%23ff9900",
+                                "t": "s"
+                              },
+                              "o-leftborderwidth": {
+                                "v": "2"
+                              },
+                              "o-topborderwidth": {
+                                "v": "2"
+                              },
+                              "o-rightborderwidth": {
+                                "v": "2"
+                              },
+                              "o-bottomborderwidth": {
+                                "v": "2"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "30",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontstyle": {
+                                "v": "1"
+                              }
+                            },
+                            "o-a": {
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-leftbordercolor": {
+                                "v": "%23ff9900",
+                                "t": "s"
+                              },
+                              "o-topbordercolor": {
+                                "v": "%23ff9900",
+                                "t": "s"
+                              },
+                              "o-rightbordercolor": {
+                                "v": "%23ff9900",
+                                "t": "s"
+                              },
+                              "o-bottombordercolor": {
+                                "v": "%23ff9900",
+                                "t": "s"
+                              },
+                              "o-leftborderwidth": {
+                                "v": "2"
+                              },
+                              "o-topborderwidth": {
+                                "v": "2"
+                              },
+                              "o-rightborderwidth": {
+                                "v": "2"
+                              },
+                              "o-bottomborderwidth": {
+                                "v": "2"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "31",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontstyle": {
+                                "v": "1"
+                              }
+                            },
+                            "o-a": {
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-leftbordercolor": {
+                                "v": "%23ff9900",
+                                "t": "s"
+                              },
+                              "o-topbordercolor": {
+                                "v": "%23ff9900",
+                                "t": "s"
+                              },
+                              "o-rightbordercolor": {
+                                "v": "%23ff9900",
+                                "t": "s"
+                              },
+                              "o-bottombordercolor": {
+                                "v": "%23ff9900",
+                                "t": "s"
+                              },
+                              "o-leftborderwidth": {
+                                "v": "2"
+                              },
+                              "o-topborderwidth": {
+                                "v": "2"
+                              },
+                              "o-rightborderwidth": {
+                                "v": "2"
+                              },
+                              "o-bottomborderwidth": {
+                                "v": "2"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "32",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-a": {
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              },
+                              "o-leftbordercolor": {
+                                "v": "%23ff9900",
+                                "t": "s"
+                              },
+                              "o-topbordercolor": {
+                                "v": "%23ff9900",
+                                "t": "s"
+                              },
+                              "o-rightbordercolor": {
+                                "v": "%23ff9900",
+                                "t": "s"
+                              },
+                              "o-bottombordercolor": {
+                                "v": "%23ff9900",
+                                "t": "s"
+                              },
+                              "o-leftborderwidth": {
+                                "v": "2"
+                              },
+                              "o-topborderwidth": {
+                                "v": "2"
+                              },
+                              "o-rightborderwidth": {
+                                "v": "2"
+                              },
+                              "o-bottomborderwidth": {
+                                "v": "2"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "o-images": {}
+        },
+        "machineId": "B1UDgrRX5P"
+      }
+    }
+  ],
+  "streams": [
+    {
+      "id": "CONNECTOR_MQTT",
+      "name": "MQTT_Connector",
+      "scope": {
+        "id": "root"
+      },
+      "owner": null,
+      "disabled": null,
+      "className": "ConnectorConfiguration",
+      "lastModified": "2021-11-30T11:35:53.491Z",
+      "lastAccessed": "2019-09-06T11:23:30.642Z",
+      "provider": {
+        "_id": "@cedalo/stream-mqtt",
+        "id": "@cedalo/stream-mqtt",
+        "className": "ProviderConfiguration",
+        "owner": null,
+        "disabled": null,
+        "lastModified": null,
+        "lastAccessed": null,
+        "isRef": true
+      },
+      "protocolVersion": 4,
+      "url": "mqtt://mosquitto:1883",
+      "userPropertiesConnect": [],
+      "userName": "streamsheets",
+      "password": "UHMHHVg2bg",
+      "baseTopic": "cedalo/",
+      "retain": false,
+      "qos": 0,
+      "description": "",
+      "state": "disconnected"
+    },
+    {
+      "id": "CONNECTOR_MONGODB",
+      "name": "MongoDB_Connector",
+      "className": "ConnectorConfiguration",
+      "disabled": true,
+      "provider": {
+        "_id": "@cedalo/stream-mongodb",
+        "id": "@cedalo/stream-mongodb",
+        "className": "ProviderConfiguration",
+        "isRef": true
+      },
+      "externalHost": true,
+      "host": "mymongodb",
+      "dbName": "",
+      "clusterName": "",
+      "userName": "",
+      "password": "",
+      "authType": "",
+      "scope": {
+        "id": "root"
+      },
+      "lastModified": "2021-11-30T11:33:04.629Z",
+      "state": "disconnected"
+    },
+    {
+      "id": "CONNECTOR_HTTP",
+      "name": "HTTP_Client_Connector",
+      "className": "ConnectorConfiguration",
+      "provider": {
+        "_id": "@cedalo/stream-rest-client",
+        "id": "@cedalo/stream-rest-client",
+        "className": "ProviderConfiguration",
+        "isRef": true
+      },
+      "baseUrl": "",
+      "userName": "",
+      "password": "",
+      "scope": {
+        "id": "root"
+      },
+      "lastModified": "2021-11-30T11:33:04.629Z",
+      "state": "disconnected"
+    },
+    {
+      "id": "CONNECTOR_WEBHOOK",
+      "name": "Webhook_Connector",
+      "className": "ConnectorConfiguration",
+      "provider": {
+        "_id": "@cedalo/rest-server",
+        "id": "@cedalo/rest-server",
+        "className": "ProviderConfiguration",
+        "isRef": true
+      },
+      "baseUrl": "cedalo/",
+      "scope": {
+        "id": "root"
+      },
+      "lastModified": "2021-11-30T11:33:04.629Z",
+      "state": "disconnected"
+    },
+    {
+      "id": "CONNECTOR_KAFKA",
+      "name": "Kafka_Connector",
+      "disabled": true,
+      "className": "ConnectorConfiguration",
+      "provider": {
+        "_id": "@cedalo/stream-kafka",
+        "id": "@cedalo/stream-kafka",
+        "className": "ProviderConfiguration",
+        "isRef": true
+      },
+      "auth": "none",
+      "connectionString": "",
+      "ksqlRESTUrl": "",
+      "registryUrl": "schema-registry:8081",
+      "schema": "{\n \"name\":\"test1\",\n  \"type\":\"record\",\n   \"fields\":[\n        {\"name\":\"random\",\"type\": \"int\"},\n        {\"name\":\"type\",\"type\":\"int\"}\n   ]\n}",
+      "ksqlCommand": "show topics;",
+      "ksqlCommandRun": true,
+      "connectTimeout": 10000,
+      "scope": {
+        "id": "root"
+      },
+      "lastModified": "2021-11-30T11:33:04.630Z",
+      "state": "disconnected"
+    },
+    {
+      "id": "CONSUMER_WEBHOOK",
+      "name": "Webhook",
+      "className": "ConsumerConfiguration",
+      "connector": {
+        "_id": "CONNECTOR_WEBHOOK",
+        "id": "CONNECTOR_WEBHOOK",
+        "className": "ConnectorConfiguration",
+        "isRef": true
+      },
+      "filter": null,
+      "labelAttribute": null,
+      "idAttribute": null,
+      "providerId": "@cedalo/rest-server",
+      "mimeType": "auto",
+      "topics": [
+        "streamsheet"
+      ],
+      "scope": {
+        "id": "root"
+      },
+      "lastModified": "2021-11-30T11:33:04.614Z",
+      "state": "connected"
+    },
+    {
+      "id": "CONSUMER_MQTT",
+      "name": "MQTT_Consumer",
+      "scope": {
+        "id": "root"
+      },
+      "owner": null,
+      "disabled": null,
+      "className": "ConsumerConfiguration",
+      "lastModified": "2021-11-30T11:35:53.498Z",
+      "lastAccessed": "2021-04-06T10:05:52.761Z",
+      "connector": {
+        "_id": "CONNECTOR_MQTT",
+        "id": "CONNECTOR_MQTT",
+        "className": "ConnectorConfiguration",
+        "owner": null,
+        "disabled": null,
+        "lastModified": "2020-11-19T11:20:55.699Z",
+        "lastAccessed": "2019-09-06T11:23:30.642Z",
+        "isRef": true
+      },
+      "description": "",
+      "filter": null,
+      "labelAttribute": null,
+      "idAttribute": null,
+      "samplePayloads": null,
+      "providerId": "@cedalo/stream-mqtt",
+      "mimeType": "auto",
+      "fixedClientId": false,
+      "clientId": "",
+      "clean": true,
+      "userPropertiesSubscribe": [],
+      "topics": [
+        "#"
+      ],
+      "state": "connected"
+    },
+    {
+      "id": "HkZRIJtchH",
+      "name": "Wind_Data",
+      "scope": {
+        "id": "root"
+      },
+      "owner": null,
+      "disabled": false,
+      "className": "ConsumerConfiguration",
+      "lastModified": "2021-11-30T11:35:53.495Z",
+      "lastAccessed": "2019-11-26T10:32:53.686Z",
+      "connector": {
+        "_id": "CONNECTOR_MQTT",
+        "id": "CONNECTOR_MQTT",
+        "className": "ConnectorConfiguration",
+        "owner": null,
+        "disabled": null,
+        "lastModified": "2020-11-19T11:20:55.699Z",
+        "lastAccessed": "2019-09-06T11:23:30.642Z",
+        "isRef": true
+      },
+      "description": "",
+      "filter": null,
+      "labelAttribute": null,
+      "idAttribute": null,
+      "samplePayloads": null,
+      "providerId": "@cedalo/stream-mqtt",
+      "mimeType": "auto",
+      "fixedClientId": false,
+      "clientId": "mqttjs_1920ae48",
+      "clean": true,
+      "userPropertiesSubscribe": [],
+      "topics": [
+        "powerplant/plants/windmill"
+      ],
+      "state": "connected"
+    },
+    {
+      "id": "PRODUCER_HTTP",
+      "name": "HTTP_Client_Producer",
+      "className": "ProducerConfiguration",
+      "connector": {
+        "_id": "CONNECTOR_HTTP",
+        "id": "CONNECTOR_HTTP",
+        "className": "ConnectorConfiguration",
+        "isRef": true
+      },
+      "providerId": "@cedalo/stream-rest-client",
+      "scope": {
+        "id": "root"
+      },
+      "lastModified": "2021-11-30T11:33:04.614Z",
+      "state": "connected"
+    },
+    {
+      "id": "PRODUCER_MQTT",
+      "name": "MQTT_Producer",
+      "scope": {
+        "id": "root"
+      },
+      "owner": null,
+      "disabled": false,
+      "className": "ProducerConfiguration",
+      "lastModified": "2021-11-30T11:35:53.500Z",
+      "lastAccessed": "2019-10-20T17:40:35.491Z",
+      "description": "",
+      "connector": {
+        "_id": "CONNECTOR_MQTT",
+        "id": "CONNECTOR_MQTT",
+        "className": "ConnectorConfiguration",
+        "owner": null,
+        "disabled": null,
+        "lastModified": "2020-11-19T11:20:55.699Z",
+        "lastAccessed": "2019-09-06T11:23:30.642Z",
+        "isRef": true
+      },
+      "providerId": "@cedalo/stream-mqtt",
+      "samplePayloads": null,
+      "mimeType": "auto",
+      "fixedClientId": false,
+      "clientId": "mqttjs_d9c49bb8",
+      "clean": true,
+      "pubTopic": "",
+      "userPropertiesProduce": [],
+      "state": "connected"
+    },
+    {
+      "id": "PRODUCER_MONGODB",
+      "name": "MongoDB_Producer",
+      "scope": {
+        "id": "root"
+      },
+      "className": "ProducerConfiguration",
+      "disabled": false,
+      "connector": {
+        "_id": "CONNECTOR_MONGODB",
+        "id": "CONNECTOR_MONGODB",
+        "className": "ConnectorConfiguration",
+        "isRef": true
+      },
+      "providerId": "@cedalo/stream-mongodb",
+      "collection": "",
+      "lastModified": "2021-11-30T11:33:04.614Z",
+      "state": "disconnected"
+    },
+    {
+      "id": "PRODUCER_KAFKA",
+      "name": "Kafka_Producer",
+      "disabled": false,
+      "className": "ProducerConfiguration",
+      "connector": {
+        "_id": "CONNECTOR_KAFKA",
+        "id": "CONNECTOR_KAFKA",
+        "className": "ConnectorConfiguration",
+        "isRef": true
+      },
+      "providerId": "@cedalo/stream-kafka",
+      "mimeType": "auto",
+      "clientId": "",
+      "topic": "",
+      "scope": {
+        "id": "root"
+      },
+      "lastModified": "2021-11-30T11:33:04.615Z",
+      "state": "disconnected"
+    }
+  ]
+}
