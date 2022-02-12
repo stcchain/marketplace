@@ -8,7 +8,7 @@
         "state": "stopped",
         "metadata": {
           "owner": "anon",
-          "lastModified": 1638335275662,
+          "lastModified": 1644673825959,
           "lastModifiedBy": "unknown",
           "fileVersion": "2.0.0"
         },
@@ -26,7 +26,7 @@
               "type": "MessageBox",
               "id": "S1WLkTJhDK",
               "stream": {
-                "id": "HkZRIJtchH",
+                "id": "BJxQQUVHkq",
                 "name": "Wind_Data"
               }
             },
@@ -35,531 +35,303 @@
                 "A1": {
                   "value": "Wind Turbine Dashboard",
                   "type": "string",
-                  "level": 0,
-                  "ref": {
-                    "col": "A",
-                    "row": 1
-                  }
+                  "level": 0
                 },
                 "A3": {
                   "value": "Incoming MQTT Data",
                   "type": "string",
-                  "level": 0,
-                  "ref": {
-                    "col": "A",
-                    "row": 3
-                  }
+                  "level": 0
                 },
                 "A5": {
                   "formula": "READ(INBOXDATA(,,\"Machine Data\",\"Power\"),B5,\"Number\",,TRUE)",
                   "value": "Power",
                   "type": "undefined",
-                  "level": 0,
-                  "ref": {
-                    "col": "A",
-                    "row": 5
-                  }
+                  "level": 0
                 },
                 "B5": {
-                  "value": 1178.4,
+                  "value": 442.4,
                   "type": "number",
-                  "level": 0,
-                  "ref": {
-                    "col": "B",
-                    "row": 5
-                  }
+                  "level": 0
                 },
                 "C5": {
                   "value": "kW",
                   "type": "string",
-                  "level": 0,
-                  "ref": {
-                    "col": "C",
-                    "row": 5
-                  }
+                  "level": 0
                 },
                 "A6": {
                   "value": "Average last 60 secs",
                   "type": "string",
-                  "level": 0,
-                  "ref": {
-                    "col": "A",
-                    "row": 6
-                  }
+                  "level": 0
                 },
                 "B6": {
                   "formula": "TIMEAGGREGATE(B5,60,1)",
-                  "value": 1173.6774193548383,
+                  "value": 666.1275459098503,
                   "type": "undefined",
-                  "level": 0,
-                  "ref": {
-                    "col": "B",
-                    "row": 6
-                  }
+                  "level": 0
                 },
                 "C6": {
                   "value": "kW",
                   "type": "string",
-                  "level": 0,
-                  "ref": {
-                    "col": "C",
-                    "row": 6
-                  }
+                  "level": 0
                 },
                 "A9": {
                   "formula": "READ(INBOXMETADATA(,,\"arrivalTime\"),B9,\"Number\",,TRUE)",
                   "value": "arrivalTime",
                   "type": "undefined",
-                  "level": 0,
-                  "ref": {
-                    "col": "A",
-                    "row": 9
-                  }
+                  "level": 0
                 },
                 "B9": {
-                  "value": 44512.56628212963,
+                  "value": 44604.576558553235,
                   "type": "number",
-                  "level": 0,
-                  "ref": {
-                    "col": "B",
-                    "row": 9
-                  }
+                  "level": 0
                 },
                 "A10": {
                   "value": "Time Interval",
                   "type": "string",
-                  "level": 1,
-                  "ref": {
-                    "col": "A",
-                    "row": 10
-                  }
+                  "level": 1
                 },
                 "B10": {
                   "formula": "TEXT(B9,\"HH:MM\")&\" to \"&TEXT(B9+1/24/60,\"HH:MM\")",
-                  "value": "13:35 to 13:36",
+                  "value": "13:50 to 13:51",
                   "type": "undefined",
-                  "level": 0,
-                  "ref": {
-                    "col": "B",
-                    "row": 10
-                  }
+                  "level": 0
                 },
                 "A12": {
                   "value": "Table Update",
                   "type": "string",
-                  "level": 1,
-                  "ref": {
-                    "col": "A",
-                    "row": 12
-                  }
+                  "level": 1
                 },
                 "B12": {
                   "formula": "TABLE.UPDATE(A14:B24,B5/60,B10,\"Energy Production\",-1,0,0)",
                   "value": true,
                   "type": "undefined",
-                  "level": 0,
-                  "ref": {
-                    "col": "B",
-                    "row": 12
-                  }
+                  "level": 0
                 },
                 "A14": {
                   "value": "Interval",
                   "type": "string",
-                  "level": 1,
-                  "ref": {
-                    "col": "A",
-                    "row": 14
-                  }
+                  "level": 1
                 },
                 "B14": {
                   "value": "Energy Production",
                   "type": "string",
-                  "level": 0,
-                  "ref": {
-                    "col": "B",
-                    "row": 14
-                  }
+                  "level": 0
                 },
                 "C14": {
                   "value": "Unit",
                   "type": "string",
-                  "level": 0,
-                  "ref": {
-                    "col": "C",
-                    "row": 14
-                  }
+                  "level": 0
                 },
                 "A15": {
-                  "value": "13:35 to 13:36",
+                  "value": "13:50 to 13:51",
                   "type": "string",
-                  "level": 0,
-                  "ref": {
-                    "col": "A",
-                    "row": 15
-                  }
+                  "level": 0
                 },
                 "B15": {
-                  "value": 19.64,
+                  "value": 7.373333333333333,
                   "type": "number",
-                  "level": 0,
-                  "ref": {
-                    "col": "B",
-                    "row": 15
-                  }
+                  "level": 0
                 },
                 "C15": {
                   "formula": "IF(B15<>0,\"kWh\",\"\")",
                   "value": "kWh",
                   "type": "undefined",
-                  "level": 0,
-                  "ref": {
-                    "col": "C",
-                    "row": 15
-                  }
+                  "level": 0
                 },
                 "A16": {
-                  "value": "10:26 to 10:27",
+                  "value": "13:49 to 13:50",
                   "type": "string",
-                  "level": 0,
-                  "ref": {
-                    "col": "A",
-                    "row": 16
-                  }
+                  "level": 0
                 },
                 "B16": {
-                  "value": 20,
+                  "value": 12.333333333333334,
                   "type": "number",
-                  "level": 0,
-                  "ref": {
-                    "col": "B",
-                    "row": 16
-                  }
+                  "level": 0
                 },
                 "C16": {
                   "formula": "IF(B16<>0,\"kWh\",\"\")",
                   "value": "kWh",
                   "type": "undefined",
-                  "level": 0,
-                  "ref": {
-                    "col": "C",
-                    "row": 16
-                  }
+                  "level": 0
                 },
                 "A17": {
-                  "value": "10:25 to 10:26",
+                  "value": "13:48 to 13:49",
                   "type": "string",
-                  "level": 0,
-                  "ref": {
-                    "col": "A",
-                    "row": 17
-                  }
+                  "level": 0
                 },
                 "B17": {
-                  "value": 20,
+                  "value": 19.92,
                   "type": "number",
-                  "level": 0,
-                  "ref": {
-                    "col": "B",
-                    "row": 17
-                  }
+                  "level": 0
                 },
                 "C17": {
                   "formula": "IF(B17<>0,\"kWh\",\"\")",
                   "value": "kWh",
                   "type": "undefined",
-                  "level": 0,
-                  "ref": {
-                    "col": "C",
-                    "row": 17
-                  }
+                  "level": 0
                 },
                 "A18": {
-                  "value": "10:24 to 10:25",
+                  "value": "13:47 to 13:48",
                   "type": "string",
-                  "level": 0,
-                  "ref": {
-                    "col": "A",
-                    "row": 18
-                  }
+                  "level": 0
                 },
                 "B18": {
-                  "value": 17.746666666666666,
+                  "value": 17.186666666666667,
                   "type": "number",
-                  "level": 0,
-                  "ref": {
-                    "col": "B",
-                    "row": 18
-                  }
+                  "level": 0
                 },
                 "C18": {
                   "formula": "IF(B18<>0,\"kWh\",\"\")",
                   "value": "kWh",
                   "type": "undefined",
-                  "level": 0,
-                  "ref": {
-                    "col": "C",
-                    "row": 18
-                  }
+                  "level": 0
                 },
                 "A19": {
-                  "value": "10:23 to 10:24",
+                  "value": "13:35 to 13:36",
                   "type": "string",
-                  "level": 0,
-                  "ref": {
-                    "col": "A",
-                    "row": 19
-                  }
+                  "level": 0
                 },
                 "B19": {
-                  "value": 16.546666666666667,
+                  "value": 19.64,
                   "type": "number",
-                  "level": 0,
-                  "ref": {
-                    "col": "B",
-                    "row": 19
-                  }
+                  "level": 0
                 },
                 "C19": {
                   "formula": "IF(B19<>0,\"kWh\",\"\")",
                   "value": "kWh",
                   "type": "undefined",
-                  "level": 0,
-                  "ref": {
-                    "col": "C",
-                    "row": 19
-                  }
+                  "level": 0
                 },
                 "M19": {
                   "value": "",
                   "type": "string",
-                  "level": 0,
-                  "ref": {
-                    "col": "M",
-                    "row": 19
-                  }
+                  "level": 0
                 },
                 "A20": {
-                  "value": "10:22 to 10:23",
+                  "value": "10:26 to 10:27",
                   "type": "string",
-                  "level": 0,
-                  "ref": {
-                    "col": "A",
-                    "row": 20
-                  }
+                  "level": 0
                 },
                 "B20": {
-                  "value": 9.333333333333334,
+                  "value": 20,
                   "type": "number",
-                  "level": 0,
-                  "ref": {
-                    "col": "B",
-                    "row": 20
-                  }
+                  "level": 0
                 },
                 "C20": {
                   "formula": "IF(B20<>0,\"kWh\",\"\")",
                   "value": "kWh",
                   "type": "undefined",
-                  "level": 0,
-                  "ref": {
-                    "col": "C",
-                    "row": 20
-                  }
+                  "level": 0
                 },
                 "A21": {
-                  "value": "10:21 to 10:22",
+                  "value": "10:25 to 10:26",
                   "type": "string",
-                  "level": 0,
-                  "ref": {
-                    "col": "A",
-                    "row": 21
-                  }
+                  "level": 0
                 },
                 "B21": {
-                  "value": 10.120000000000001,
+                  "value": 20,
                   "type": "number",
-                  "level": 0,
-                  "ref": {
-                    "col": "B",
-                    "row": 21
-                  }
+                  "level": 0
                 },
                 "C21": {
                   "formula": "IF(B21<>0,\"kWh\",\"\")",
                   "value": "kWh",
                   "type": "undefined",
-                  "level": 0,
-                  "ref": {
-                    "col": "C",
-                    "row": 21
-                  }
+                  "level": 0
                 },
                 "A22": {
-                  "value": "10:20 to 10:21",
+                  "value": "10:24 to 10:25",
                   "type": "string",
-                  "level": 0,
-                  "ref": {
-                    "col": "A",
-                    "row": 22
-                  }
+                  "level": 0
                 },
                 "B22": {
-                  "value": 2.4,
+                  "value": 17.746666666666666,
                   "type": "number",
-                  "level": 0,
-                  "ref": {
-                    "col": "B",
-                    "row": 22
-                  }
+                  "level": 0
                 },
                 "C22": {
                   "formula": "IF(B22<>0,\"kWh\",\"\")",
                   "value": "kWh",
                   "type": "undefined",
-                  "level": 0,
-                  "ref": {
-                    "col": "C",
-                    "row": 22
-                  }
+                  "level": 0
                 },
                 "A23": {
-                  "value": "10:19 to 10:20",
+                  "value": "10:23 to 10:24",
                   "type": "string",
-                  "level": 0,
-                  "ref": {
-                    "col": "A",
-                    "row": 23
-                  }
+                  "level": 0
                 },
                 "B23": {
-                  "value": 9.213333333333333,
+                  "value": 16.546666666666667,
                   "type": "number",
-                  "level": 0,
-                  "ref": {
-                    "col": "B",
-                    "row": 23
-                  }
+                  "level": 0
                 },
                 "C23": {
                   "formula": "IF(B23<>0,\"kWh\",\"\")",
                   "value": "kWh",
                   "type": "undefined",
-                  "level": 0,
-                  "ref": {
-                    "col": "C",
-                    "row": 23
-                  }
+                  "level": 0
                 },
                 "A24": {
-                  "value": "10:18 to 10:19",
+                  "value": "10:22 to 10:23",
                   "type": "string",
-                  "level": 0,
-                  "ref": {
-                    "col": "A",
-                    "row": 24
-                  }
+                  "level": 0
                 },
                 "B24": {
-                  "value": 3.3066666666666666,
+                  "value": 9.333333333333334,
                   "type": "number",
-                  "level": 0,
-                  "ref": {
-                    "col": "B",
-                    "row": 24
-                  }
+                  "level": 0
                 },
                 "C24": {
                   "formula": "IF(B24<>0,\"kWh\",\"\")",
                   "value": "kWh",
                   "type": "undefined",
-                  "level": 0,
-                  "ref": {
-                    "col": "C",
-                    "row": 24
-                  }
+                  "level": 0
                 },
                 "A25": {
                   "value": "Total 10 Minutes",
                   "type": "string",
-                  "level": 1,
-                  "ref": {
-                    "col": "A",
-                    "row": 25
-                  }
+                  "level": 1
                 },
                 "B25": {
                   "formula": "SUM(B15:B24)",
-                  "value": 128.30666666666667,
+                  "value": 160.08,
                   "type": "undefined",
-                  "level": 0,
-                  "ref": {
-                    "col": "B",
-                    "row": 25
-                  }
+                  "level": 0
                 },
                 "C25": {
                   "value": "kWh",
                   "type": "string",
-                  "level": 0,
-                  "ref": {
-                    "col": "C",
-                    "row": 25
-                  }
+                  "level": 0
                 },
                 "A30": {
                   "value": "Data calculation:",
                   "type": "string",
-                  "level": 0,
-                  "ref": {
-                    "col": "A",
-                    "row": 30
-                  }
+                  "level": 0
                 },
                 "B30": {
                   "value": "Drag&Drop payload elements to link your data stream to the sheet (e.g. A5&B5). The adjacent functions use this data as input for their calculations. ",
                   "type": "string",
-                  "level": 0,
-                  "ref": {
-                    "col": "B",
-                    "row": 30
-                  }
+                  "level": 0
                 },
                 "A31": {
                   "value": "Data visualization:",
                   "type": "string",
-                  "level": 0,
-                  "ref": {
-                    "col": "A",
-                    "row": 31
-                  }
+                  "level": 0
                 },
                 "B31": {
                   "value": "This x/y chart displays a data history of the power output of the windmill. The TIMEAGGREGATE() function in B6 stores speed values for one minute and serves as data source for the chart. Charts can also use regular data ranges to display data as seen in the second chart. The chart below uses the range A14:B24.",
                   "type": "string",
-                  "level": 0,
-                  "ref": {
-                    "col": "B",
-                    "row": 31
-                  }
+                  "level": 0
                 },
                 "A32": {
                   "value": "Table generation:",
                   "type": "string",
-                  "level": 0,
-                  "ref": {
-                    "col": "A",
-                    "row": 32
-                  }
+                  "level": 0
                 },
                 "B32": {
                   "value": "The function TABLE.UPDATE() is used to generate the table in A14:B24. ",
                   "type": "string",
-                  "level": 0,
-                  "ref": {
-                    "col": "B",
-                    "row": 32
-                  }
+                  "level": 0
                 }
               },
               "namedCells": {},
@@ -665,7 +437,7 @@
                             "f": "S1!B6",
                             "v": "0",
                             "msc": true,
-                            "sv": 522.6537562604339,
+                            "sv": 666.1275459098503,
                             "ref": "S1!B6"
                           },
                           "o-ftimexkey": {
@@ -698,7 +470,7 @@
                           "align": "bottom",
                           "type": "category",
                           "name": "XAxis1",
-                          "position": "1531.7882277727642 4338.814798200734 9449.379902077657 4774",
+                          "position": "1531.7882277727642 4338.814798200734 9370.883455692112 4774",
                           "o-formula": {
                             "f": "AXIS()",
                             "v": "0",
@@ -2705,7 +2477,7 @@
                 ],
                 "timestamp": 0,
                 "version": 1,
-                "changed": 297317572295
+                "changed": 680388103263
               },
               "properties": {
                 "cols": [],
@@ -2745,7 +2517,7 @@
         "extensionSettings": {
           "webhook_server": {
             "id": "rySsk9mFY",
-            "enabled": true,
+            "enabled": false,
             "streamsheetId": "BJTOCCeNu"
           }
         },
@@ -2754,13 +2526,13 @@
           "id": "root"
         },
         "namedCells": {
-          "|HTTP_Client_Producer": {
+          "|Webhook": {
             "value": {
-              "id": "PRODUCER_HTTP",
-              "name": "HTTP_Client_Producer",
-              "type": "producer",
+              "id": "CONSUMER_WEBHOOK",
+              "name": "Webhook",
+              "type": "stream",
               "state": "connected",
-              "timestamp": 1638272153542,
+              "timestamp": 1644610531514,
               "scope": {
                 "id": "root"
               }
@@ -2771,13 +2543,115 @@
             },
             "level": 0
           },
-          "|Webhook": {
+          "|Parking_Operator": {
             "value": {
-              "id": "CONSUMER_WEBHOOK",
-              "name": "Webhook",
+              "id": "SygUvJvvhF",
+              "name": "Parking_Operator",
+              "type": "producer",
+              "state": "connected",
+              "timestamp": 1644610531518,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|SDAIA_Consumer": {
+            "value": {
+              "id": "rygeyCL-2F",
+              "name": "SDAIA_Consumer",
               "type": "stream",
               "state": "connected",
-              "timestamp": 1638272153543,
+              "timestamp": 1644610531521,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|MoMRAH_Producer": {
+            "value": {
+              "id": "SkxI968ZnK",
+              "name": "MoMRAH_Producer",
+              "type": "producer",
+              "state": "connected",
+              "timestamp": 1644610531522,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|MoMRAH_Consumer": {
+            "value": {
+              "id": "B1ebY7I4oF",
+              "name": "MoMRAH_Consumer",
+              "type": "stream",
+              "state": "connected",
+              "timestamp": 1644610531522,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|MDA_Consumer": {
+            "value": {
+              "id": "ryx4U3Ub2Y",
+              "name": "MDA_Consumer",
+              "type": "stream",
+              "state": "connected",
+              "timestamp": 1644610531523,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|Parking_Operator1": {
+            "value": {
+              "id": "rJe7JnUZ2K",
+              "name": "Parking_Operator1",
+              "type": "producer",
+              "state": "connected",
+              "timestamp": 1644610531528,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|MDA_Producer": {
+            "value": {
+              "id": "rJlMIQUVot",
+              "name": "MDA_Producer",
+              "type": "producer",
+              "state": "connected",
+              "timestamp": 1644610531528,
               "scope": {
                 "id": "root"
               }
@@ -2790,11 +2664,11 @@
           },
           "|Wind_Data": {
             "value": {
-              "id": "HkZRIJtchH",
+              "id": "BJxQQUVHkq",
               "name": "Wind_Data",
               "type": "stream",
               "state": "connected",
-              "timestamp": 1638273572955,
+              "timestamp": 1644673688792,
               "scope": {
                 "id": "root"
               }
@@ -2807,11 +2681,11 @@
           },
           "|MQTT_Consumer": {
             "value": {
-              "id": "CONSUMER_MQTT",
+              "id": "SylOASEB19",
               "name": "MQTT_Consumer",
               "type": "stream",
               "state": "connected",
-              "timestamp": 1638273573034,
+              "timestamp": 1644673694714,
               "scope": {
                 "id": "root"
               }
@@ -2824,11 +2698,11 @@
           },
           "|MQTT_Producer": {
             "value": {
-              "id": "PRODUCER_MQTT",
+              "id": "B1eTFUNSyq",
               "name": "MQTT_Producer",
               "type": "producer",
               "state": "connected",
-              "timestamp": 1638273573050,
+              "timestamp": 1644673700180,
               "scope": {
                 "id": "root"
               }
@@ -2840,7 +2714,7 @@
             "level": 0
           }
         },
-        "previewImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPUAAABkCAYAAABei3aDAAAAAXNSR0IArs4c6QAAHElJREFUeF7tnQeQVEUTxxuRqKKcYMacEUwoigkFRIKAYgAEA2qpmAMqIkUQTBgRpQyIioogGOBADIgYUAETZjCAARGzqKgIfPXrq7nvsbd793b3zZsNM1VXd7f7Znqmp//T/Wa6e6pNmDBhjfjiOeA5UDAcqAaojz/++FADeuutt2TfffcN9ax/yHMADriSmWKjG+S1B7XHnlUOFBu4XI3Xg9qqGPvGgxxwJeTFRteD2uMuNg4UG7hcjdeDOjaR9oRcCXmx0bUO6sWLF8svv/wiTZo0kerVq6eU7OXLl8uHH34ojRs3lg022CBrBHz88cfaxm677VbeVrLPsiYUsoFktKMes+mKy3FWxo5iA5er8WYF6gYNGshZZ50lN954oyCgJ510kkyaNEnn9ZprrpH77rtPPvvsM/nyyy+la9euUrNmzZRz/umnn8oFF1wgI0aMkF122UWfgylXXnmlLFy4UEpKSmSnnXaS6667TrbffvsqoQR9yoABA8qfnTp1qv7doUOHKusnPvDTTz/p+H777Tf9Ofjgg2XYsGHSsGHDUG0l60+yMYdqrIqHktGKot1s23Al5MVGNytQ77777nLxxRdL+/bt5fPPP5fhw4fL9ddfr3P/ySefKLBLS0tl3rx5cu655yrAAPaMGTPknHPOkfPOO09Bz3fLli3T7x555JFyUNPOihUrlMYhhxyioKLccccd+rtnz54yZMgQOf/88+X9998XQFuvXj3p3r27TJs2TV588UVZtWqV7LzzznLDDTfIo48+Wl7v8ssvr9CXL774QgYOHCjfffeddOrUSdtdd911tY4BNWPYa6+9tE9YAYxj8ODB8swzzwiLHOPHKrn33ntl4sSJUrt2bV30nn76aXnzzTfl77//ls0331xuueUW+fnnn+XUU0/V/+HD0KFDpW3btnL77bfLXXfdJfvss4/2u1GjRhVo7LDDDsIYttlmG1mzZo3255577tGflStXarvBBS1bQEZRv9jA5Wq8WYGac+q7775bzWbAt8cee8iCBQtk9erV0rJlSznxxBMVpK+88ooK2Omnny5XXHGFysfNN98so0ePVqFFAx9xxBEVNHUqUBtN1KdPH10YBg0apAsHIALkW2+9tWp8AA0w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"
+        "previewImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPUAAABkCAYAAABei3aDAAAAAXNSR0IArs4c6QAAHJBJREFUeF7tnQm8TdUXxxfy16w0U4oGSYM0alYyRQMVylCoFJKK8KGBREiDMjQoIkORVJIGmYekUYNMURkbNGnU//NdPvt13Xffe+fee/Y599y79+fzPu+9e/e4zvrttc7eayg2YcKEf8UVRwFHgayhQDFAfeWVV3pa0B133CH333+/p7qukqMAFAiLZ3Jt3FhaO1A77FmlQK6BK6z1OlBbZWPXeSwFwmLyXBvXgdrhLjAK5Bq4wlqvA3VgLO0GCovJc21c66Du0qWLlC1bVoYMGSLLli0rkLMvueQSueiii+TVV1+Vl156KW0E3HfffdpH9+7d8/pK9FnaA3nsINHYfq/ZTCXMdRZGjlwDV1jrTQvU//77r/To0UMef/xx2XvvvaVly5YybNgwfa5XX321dOrUSapXry4VK1ZUcL377rsFPvNevXrJLbfcIg899JDceeedWu/RRx/VPnfZZRf5+++/5ZdffpFBgwaJYdrCGGjp0qX6dZUqVfKqTZo0Sf9u2LChRyj+V6158+by2GOPyU477aQ/mzZtkp49e8qIESM89ZVoPonW7KmzIiolGsuPftPtIywmz7Vx0wI1IB01apS89957cvDBB0vVqlVl5syZ+uwPOeQQlbwDBw6Uo446SsaNGyfXX3+9/PPPP3LggQfKBx98oMAHLID5f//7n7BJ9O/fPw/U9HP++efrGJ9//rnUrFlT+160aJH+BuB9+/aVJ554Qk4//XQ56aST5I8//pCpU6dKjRo15NBDD5VixYrJli1b9DqlQ4cOee1oGz+Xpk2bSvv27XUT+eKLL3Run376qbYxoJ4wYYJMnDhRnnzySVm/fr3OHWCXL19e/vzzTxk5cqSMHj1aHnnkEd1QGIP51alTR8qVKyclSpSQrVu3SteuXeWwww6T22+/XX7//XfZbbfdZNq0abqe4cOHa9uffvpJHn74YXn77bfzjTFnzhxd//fff69r7Nevn26ixx13nM4XrSh2Q0sXkH60zzVwhbXetEDNPfXcuXMV0CVLlpRvvvlGAQuTIS1q164tb775phx99NHy7LPPSrt27fJU6wYNGijgW7dureCgXseOHXeQ1AWB2kgiGBnGHjp0qJxxxhlSrVo1eeqppxT0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"
       },
       "graph": {
         "id": "BJgLya1hwt",
@@ -4675,16 +4549,16 @@
   ],
   "streams": [
     {
-      "id": "CONNECTOR_MQTT",
-      "name": "MQTT_Connector",
+      "id": "HylKJmLVsK",
+      "name": "stcChain_MQTT_Broker",
       "scope": {
         "id": "root"
       },
       "owner": null,
-      "disabled": null,
+      "disabled": false,
       "className": "ConnectorConfiguration",
-      "lastModified": "2021-11-30T11:35:53.491Z",
-      "lastAccessed": "2019-09-06T11:23:30.642Z",
+      "lastModified": "2022-01-04T05:36:18.854Z",
+      "lastAccessed": "2021-12-25T08:14:25.116Z",
       "provider": {
         "_id": "@cedalo/stream-mqtt",
         "id": "@cedalo/stream-mqtt",
@@ -4696,147 +4570,38 @@
         "isRef": true
       },
       "protocolVersion": 4,
-      "url": "mqtt://mosquitto:1883",
+      "url": "mqtt://95.177.176.224:1883",
       "userPropertiesConnect": [],
-      "userName": "streamsheets",
-      "password": "UHMHHVg2bg",
-      "baseTopic": "cedalo/",
+      "userName": "",
+      "password": "",
+      "baseTopic": "",
       "retain": false,
       "qos": 0,
-      "description": "",
+      "description": "stcChain MQTT Broker",
       "state": "disconnected"
     },
     {
-      "id": "CONNECTOR_MONGODB",
-      "name": "MongoDB_Connector",
-      "className": "ConnectorConfiguration",
-      "disabled": true,
-      "provider": {
-        "_id": "@cedalo/stream-mongodb",
-        "id": "@cedalo/stream-mongodb",
-        "className": "ProviderConfiguration",
-        "isRef": true
-      },
-      "externalHost": true,
-      "host": "mymongodb",
-      "dbName": "",
-      "clusterName": "",
-      "userName": "",
-      "password": "",
-      "authType": "",
-      "scope": {
-        "id": "root"
-      },
-      "lastModified": "2021-11-30T11:33:04.629Z",
-      "state": "disconnected"
-    },
-    {
-      "id": "CONNECTOR_HTTP",
-      "name": "HTTP_Client_Connector",
-      "className": "ConnectorConfiguration",
-      "provider": {
-        "_id": "@cedalo/stream-rest-client",
-        "id": "@cedalo/stream-rest-client",
-        "className": "ProviderConfiguration",
-        "isRef": true
-      },
-      "baseUrl": "",
-      "userName": "",
-      "password": "",
-      "scope": {
-        "id": "root"
-      },
-      "lastModified": "2021-11-30T11:33:04.629Z",
-      "state": "disconnected"
-    },
-    {
-      "id": "CONNECTOR_WEBHOOK",
-      "name": "Webhook_Connector",
-      "className": "ConnectorConfiguration",
-      "provider": {
-        "_id": "@cedalo/rest-server",
-        "id": "@cedalo/rest-server",
-        "className": "ProviderConfiguration",
-        "isRef": true
-      },
-      "baseUrl": "cedalo/",
-      "scope": {
-        "id": "root"
-      },
-      "lastModified": "2021-11-30T11:33:04.629Z",
-      "state": "disconnected"
-    },
-    {
-      "id": "CONNECTOR_KAFKA",
-      "name": "Kafka_Connector",
-      "disabled": true,
-      "className": "ConnectorConfiguration",
-      "provider": {
-        "_id": "@cedalo/stream-kafka",
-        "id": "@cedalo/stream-kafka",
-        "className": "ProviderConfiguration",
-        "isRef": true
-      },
-      "auth": "none",
-      "connectionString": "",
-      "ksqlRESTUrl": "",
-      "registryUrl": "schema-registry:8081",
-      "schema": "{\n \"name\":\"test1\",\n  \"type\":\"record\",\n   \"fields\":[\n        {\"name\":\"random\",\"type\": \"int\"},\n        {\"name\":\"type\",\"type\":\"int\"}\n   ]\n}",
-      "ksqlCommand": "show topics;",
-      "ksqlCommandRun": true,
-      "connectTimeout": 10000,
-      "scope": {
-        "id": "root"
-      },
-      "lastModified": "2021-11-30T11:33:04.630Z",
-      "state": "disconnected"
-    },
-    {
-      "id": "CONSUMER_WEBHOOK",
-      "name": "Webhook",
-      "className": "ConsumerConfiguration",
-      "connector": {
-        "_id": "CONNECTOR_WEBHOOK",
-        "id": "CONNECTOR_WEBHOOK",
-        "className": "ConnectorConfiguration",
-        "isRef": true
-      },
-      "filter": null,
-      "labelAttribute": null,
-      "idAttribute": null,
-      "providerId": "@cedalo/rest-server",
-      "mimeType": "auto",
-      "topics": [
-        "streamsheet"
-      ],
-      "scope": {
-        "id": "root"
-      },
-      "lastModified": "2021-11-30T11:33:04.614Z",
-      "state": "connected"
-    },
-    {
-      "id": "CONSUMER_MQTT",
-      "name": "MQTT_Consumer",
+      "id": "BJxQQUVHkq",
+      "name": "Wind_Data",
       "scope": {
         "id": "root"
       },
       "owner": null,
       "disabled": null,
       "className": "ConsumerConfiguration",
-      "lastModified": "2021-11-30T11:35:53.498Z",
-      "lastAccessed": "2021-04-06T10:05:52.761Z",
+      "lastModified": "2022-02-12T13:48:08.777Z",
+      "lastAccessed": "2022-02-12T13:28:58.562Z",
       "connector": {
-        "_id": "CONNECTOR_MQTT",
-        "id": "CONNECTOR_MQTT",
+        "_id": "HylKJmLVsK",
+        "id": "HylKJmLVsK",
         "className": "ConnectorConfiguration",
         "owner": null,
-        "disabled": null,
-        "lastModified": "2020-11-19T11:20:55.699Z",
-        "lastAccessed": "2019-09-06T11:23:30.642Z",
+        "disabled": false,
+        "lastModified": "2022-01-04T05:36:18.854Z",
+        "lastAccessed": "2021-12-25T08:14:25.116Z",
         "isRef": true
       },
-      "description": "",
+      "description": "Windmill Simulated Data",
       "filter": null,
       "labelAttribute": null,
       "idAttribute": null,
@@ -4848,135 +4613,9 @@
       "clean": true,
       "userPropertiesSubscribe": [],
       "topics": [
-        "#"
+        "cedalo/powerplant/plants/windmill"
       ],
       "state": "connected"
-    },
-    {
-      "id": "HkZRIJtchH",
-      "name": "Wind_Data",
-      "scope": {
-        "id": "root"
-      },
-      "owner": null,
-      "disabled": false,
-      "className": "ConsumerConfiguration",
-      "lastModified": "2021-11-30T11:35:53.495Z",
-      "lastAccessed": "2019-11-26T10:32:53.686Z",
-      "connector": {
-        "_id": "CONNECTOR_MQTT",
-        "id": "CONNECTOR_MQTT",
-        "className": "ConnectorConfiguration",
-        "owner": null,
-        "disabled": null,
-        "lastModified": "2020-11-19T11:20:55.699Z",
-        "lastAccessed": "2019-09-06T11:23:30.642Z",
-        "isRef": true
-      },
-      "description": "",
-      "filter": null,
-      "labelAttribute": null,
-      "idAttribute": null,
-      "samplePayloads": null,
-      "providerId": "@cedalo/stream-mqtt",
-      "mimeType": "auto",
-      "fixedClientId": false,
-      "clientId": "mqttjs_1920ae48",
-      "clean": true,
-      "userPropertiesSubscribe": [],
-      "topics": [
-        "powerplant/plants/windmill"
-      ],
-      "state": "connected"
-    },
-    {
-      "id": "PRODUCER_HTTP",
-      "name": "HTTP_Client_Producer",
-      "className": "ProducerConfiguration",
-      "connector": {
-        "_id": "CONNECTOR_HTTP",
-        "id": "CONNECTOR_HTTP",
-        "className": "ConnectorConfiguration",
-        "isRef": true
-      },
-      "providerId": "@cedalo/stream-rest-client",
-      "scope": {
-        "id": "root"
-      },
-      "lastModified": "2021-11-30T11:33:04.614Z",
-      "state": "connected"
-    },
-    {
-      "id": "PRODUCER_MQTT",
-      "name": "MQTT_Producer",
-      "scope": {
-        "id": "root"
-      },
-      "owner": null,
-      "disabled": false,
-      "className": "ProducerConfiguration",
-      "lastModified": "2021-11-30T11:35:53.500Z",
-      "lastAccessed": "2019-10-20T17:40:35.491Z",
-      "description": "",
-      "connector": {
-        "_id": "CONNECTOR_MQTT",
-        "id": "CONNECTOR_MQTT",
-        "className": "ConnectorConfiguration",
-        "owner": null,
-        "disabled": null,
-        "lastModified": "2020-11-19T11:20:55.699Z",
-        "lastAccessed": "2019-09-06T11:23:30.642Z",
-        "isRef": true
-      },
-      "providerId": "@cedalo/stream-mqtt",
-      "samplePayloads": null,
-      "mimeType": "auto",
-      "fixedClientId": false,
-      "clientId": "mqttjs_d9c49bb8",
-      "clean": true,
-      "pubTopic": "",
-      "userPropertiesProduce": [],
-      "state": "connected"
-    },
-    {
-      "id": "PRODUCER_MONGODB",
-      "name": "MongoDB_Producer",
-      "scope": {
-        "id": "root"
-      },
-      "className": "ProducerConfiguration",
-      "disabled": false,
-      "connector": {
-        "_id": "CONNECTOR_MONGODB",
-        "id": "CONNECTOR_MONGODB",
-        "className": "ConnectorConfiguration",
-        "isRef": true
-      },
-      "providerId": "@cedalo/stream-mongodb",
-      "collection": "",
-      "lastModified": "2021-11-30T11:33:04.614Z",
-      "state": "disconnected"
-    },
-    {
-      "id": "PRODUCER_KAFKA",
-      "name": "Kafka_Producer",
-      "disabled": false,
-      "className": "ProducerConfiguration",
-      "connector": {
-        "_id": "CONNECTOR_KAFKA",
-        "id": "CONNECTOR_KAFKA",
-        "className": "ConnectorConfiguration",
-        "isRef": true
-      },
-      "providerId": "@cedalo/stream-kafka",
-      "mimeType": "auto",
-      "clientId": "",
-      "topic": "",
-      "scope": {
-        "id": "root"
-      },
-      "lastModified": "2021-11-30T11:33:04.615Z",
-      "state": "disconnected"
     }
   ]
 }
