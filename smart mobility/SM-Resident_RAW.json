@@ -8,7 +8,7 @@
         "state": "stopped",
         "metadata": {
           "owner": "anon",
-          "lastModified": 1647931809142,
+          "lastModified": 1649235542162,
           "lastModifiedBy": "unknown",
           "fileVersion": "2.0.0"
         },
@@ -45,66 +45,77 @@
                   "level": 0
                 },
                 "B2": {
-                  "value": "SkxWbFobxvG9",
+                  "value": "H1DGeI05Q5",
                   "type": "string",
                   "level": 0
                 },
                 "A3": {
-                  "formula": "READ(INBOXMETADATA(,,\"source\"),B3,\"String\",,TRUE)",
-                  "value": "source",
+                  "formula": "READ(INBOXDATA(,,\"iPhoneID\"),B3,\"String\",,TRUE)",
+                  "value": "iPhoneID",
                   "type": "undefined",
                   "level": 0
                 },
                 "B3": {
-                  "value": "mobility/0x1E38A4AF747c6c47d649357B99437942e7D180bC",
+                  "value": "E2E8F0F5-451F-4721-93EC-FD27E5DF4A2B",
                   "type": "string",
                   "level": 0
                 },
                 "A4": {
-                  "formula": "READ(INBOXMETADATA(,,\"connector\"),B4,\"String\",,TRUE)",
-                  "value": "connector",
+                  "formula": "READ(INBOXMETADATA(,,\"source\"),B4,\"String\",,TRUE)",
+                  "value": "source",
                   "type": "undefined",
                   "level": 0
                 },
                 "B4": {
-                  "value": "stcChain_MQTT_Broker",
+                  "value": "mobility/0x1E38A4AF747c6c47d649357B99437942e7D180bC",
                   "type": "string",
                   "level": 0
                 },
                 "A5": {
-                  "formula": "READ(INBOXMETADATA(,,\"consumer\"),B5,\"String\",,TRUE)",
-                  "value": "consumer",
+                  "formula": "READ(INBOXDATA(,,\"iPhoneName\"),B5,\"String\",,TRUE)",
+                  "value": "iPhoneName",
                   "type": "undefined",
                   "level": 0
                 },
                 "B5": {
-                  "value": "stc_Consumer",
-                  "type": "string",
-                  "level": 0
-                },
-                "D5": {
-                  "value": "Topic",
-                  "type": "string",
-                  "level": 0
-                },
-                "E5": {
-                  "value": "resident/0x1E38A4AF747c6c47d649357B99437942e7D180bC",
+                  "value": "AAT",
                   "type": "string",
                   "level": 0
                 },
                 "A6": {
+                  "formula": "READ(INBOXMETADATA(,,\"consumer\"),B6,\"String\",,TRUE)",
+                  "value": "consumer",
+                  "type": "undefined",
+                  "level": 0
+                },
+                "B6": {
+                  "value": "stc_Consumer",
+                  "type": "string",
+                  "level": 0
+                },
+                "D6": {
+                  "value": "Topic",
+                  "type": "string",
+                  "level": 0
+                },
+                "E6": {
+                  "value": "stc/0x1E38A4AF747c6c47d649357B99437942e7D180bC",
+                  "type": "string",
+                  "level": 0
+                },
+                "A7": {
                   "formula": "READ(INBOXDATA(,,\"GPS\"),,\"Dictionary\",,TRUE)",
                   "value": "GPS",
                   "type": "undefined",
                   "level": 0
                 },
-                "D6": {
+                "D7": {
                   "value": "Publish",
                   "type": "string",
                   "level": 0
                 },
-                "E6": {
-                  "formula": "MQTT.PUBLISH(|MDA_Producer,JSON(S1!A1:B10),S1!E5)",
+                "E7": {
+                  "formula": "MQTT.PUBLISH(|MDA_Producer,JSON(A1:B11),E6)",
                   "value": true,
                   "type": "undefined",
                   "level": 0,
@@ -112,47 +123,47 @@
                     "|MDA_Producer"
                   ]
                 },
-                "A7": {
-                  "formula": "READ(INBOXDATA(,,A6,\"Altitude\"),B7,\"Number\",,TRUE)",
+                "A8": {
+                  "formula": "READ(INBOXDATA(,,A7,\"Altitude\"),B8,\"Number\",,TRUE)",
                   "value": "Altitude",
                   "type": "undefined",
                   "level": 0
                 },
-                "B7": {
-                  "value": "#NA!",
-                  "type": "undefined",
+                "B8": {
+                  "value": 667.7595073562115,
+                  "type": "number",
                   "level": 0
                 },
-                "A8": {
-                  "formula": "READ(INBOXDATA(,,A6,\"Latitude\"),B8,\"Number\",,TRUE)",
+                "A9": {
+                  "formula": "READ(INBOXDATA(,,A7,\"Latitude\"),B9,\"Number\",,TRUE)",
                   "value": "Latitude",
                   "type": "undefined",
                   "level": 0
                 },
-                "B8": {
-                  "value": "#NA!",
-                  "type": "undefined",
+                "B9": {
+                  "value": 24.835411727201702,
+                  "type": "number",
                   "level": 0
                 },
-                "A9": {
-                  "formula": "READ(INBOXDATA(,,A6,\"Longitude\"),B9,\"Number\",,TRUE)",
+                "A10": {
+                  "formula": "READ(INBOXDATA(,,A7,\"Longitude\"),B10,\"Number\",,TRUE)",
                   "value": "Longitude",
                   "type": "undefined",
                   "level": 0
                 },
-                "B9": {
-                  "value": "#NA!",
-                  "type": "undefined",
+                "B10": {
+                  "value": 46.60056479170683,
+                  "type": "number",
                   "level": 0
                 },
-                "A10": {
-                  "formula": "READ(INBOXDATA(,,\"Timestamp\"),B10,\"String\",,TRUE)",
+                "A11": {
+                  "formula": "READ(INBOXDATA(,,\"Timestamp\"),B11,\"String\",,TRUE)",
                   "value": "Timestamp",
                   "type": "undefined",
                   "level": 0
                 },
-                "B10": {
-                  "value": "2022-03-22T09:48:54.0960+0300",
+                "B11": {
+                  "value": "2022-04-06T11:57:14.2360+0300",
                   "type": "string",
                   "level": 0
                 }
@@ -162,7 +173,7 @@
                 "shapes": [],
                 "timestamp": 0,
                 "version": 1,
-                "changed": 760010178890
+                "changed": 339516892183
               },
               "properties": {
                 "cols": [],
@@ -231,7 +242,7 @@
               "name": "Webhook",
               "type": "stream",
               "state": "connected",
-              "timestamp": 1647794977976,
+              "timestamp": 1648906395691,
               "scope": {
                 "id": "root"
               }
@@ -248,109 +259,7 @@
               "name": "Parking_Operator",
               "type": "producer",
               "state": "connected",
-              "timestamp": 1647794977981,
-              "scope": {
-                "id": "root"
-              }
-            },
-            "type": "object",
-            "info": {
-              "rawtype": "object"
-            },
-            "level": 0
-          },
-          "|SDAIA_Consumer": {
-            "value": {
-              "id": "rygeyCL-2F",
-              "name": "SDAIA_Consumer",
-              "type": "stream",
-              "state": "connected",
-              "timestamp": 1647794977982,
-              "scope": {
-                "id": "root"
-              }
-            },
-            "type": "object",
-            "info": {
-              "rawtype": "object"
-            },
-            "level": 0
-          },
-          "|Wind_Data": {
-            "value": {
-              "id": "BJxQQUVHkq",
-              "name": "Wind_Data",
-              "type": "stream",
-              "state": "connected",
-              "timestamp": 1647794977983,
-              "scope": {
-                "id": "root"
-              }
-            },
-            "type": "object",
-            "info": {
-              "rawtype": "object"
-            },
-            "level": 0
-          },
-          "|Parking_Operator1": {
-            "value": {
-              "id": "rJe7JnUZ2K",
-              "name": "Parking_Operator1",
-              "type": "producer",
-              "state": "connected",
-              "timestamp": 1647794977984,
-              "scope": {
-                "id": "root"
-              }
-            },
-            "type": "object",
-            "info": {
-              "rawtype": "object"
-            },
-            "level": 0
-          },
-          "|MQTT_Consumer": {
-            "value": {
-              "id": "SylOASEB19",
-              "name": "MQTT_Consumer",
-              "type": "stream",
-              "state": "connected",
-              "timestamp": 1647794977984,
-              "scope": {
-                "id": "root"
-              }
-            },
-            "type": "object",
-            "info": {
-              "rawtype": "object"
-            },
-            "level": 0
-          },
-          "|MDA_Consumer": {
-            "value": {
-              "id": "ryx4U3Ub2Y",
-              "name": "MDA_Consumer",
-              "type": "stream",
-              "state": "connected",
-              "timestamp": 1647794977985,
-              "scope": {
-                "id": "root"
-              }
-            },
-            "type": "object",
-            "info": {
-              "rawtype": "object"
-            },
-            "level": 0
-          },
-          "|MoMRAH_Consumer": {
-            "value": {
-              "id": "B1ebY7I4oF",
-              "name": "MoMRAH_Consumer",
-              "type": "stream",
-              "state": "connected",
-              "timestamp": 1647794977985,
+              "timestamp": 1648906395701,
               "scope": {
                 "id": "root"
               }
@@ -367,7 +276,41 @@
               "name": "MQTT_Producer",
               "type": "producer",
               "state": "connected",
-              "timestamp": 1647794977985,
+              "timestamp": 1649223226233,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|Wind_Data": {
+            "value": {
+              "id": "BJxQQUVHkq",
+              "name": "Wind_Data",
+              "type": "stream",
+              "state": "connected",
+              "timestamp": 1649223226834,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|MQTT_Consumer": {
+            "value": {
+              "id": "SylOASEB19",
+              "name": "MQTT_Consumer",
+              "type": "stream",
+              "state": "connected",
+              "timestamp": 1649223226937,
               "scope": {
                 "id": "root"
               }
@@ -384,7 +327,7 @@
               "name": "MDA_Producer",
               "type": "producer",
               "state": "connected",
-              "timestamp": 1647794977986,
+              "timestamp": 1649223227493,
               "scope": {
                 "id": "root"
               }
@@ -395,13 +338,47 @@
             },
             "level": 0
           },
-          "|MoMRAH_Producer": {
+          "|SDAIA_Consumer": {
             "value": {
-              "id": "SkxI968ZnK",
-              "name": "MoMRAH_Producer",
+              "id": "rygeyCL-2F",
+              "name": "SDAIA_Consumer",
+              "type": "stream",
+              "state": "connected",
+              "timestamp": 1649223227584,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|Parking_Operator1": {
+            "value": {
+              "id": "rJe7JnUZ2K",
+              "name": "Parking_Operator1",
               "type": "producer",
               "state": "connected",
-              "timestamp": 1647794977986,
+              "timestamp": 1649223227635,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|MoMRAH_Consumer": {
+            "value": {
+              "id": "B1ebY7I4oF",
+              "name": "MoMRAH_Consumer",
+              "type": "stream",
+              "state": "connected",
+              "timestamp": 1649223227639,
               "scope": {
                 "id": "root"
               }
@@ -418,7 +395,41 @@
               "name": "Resident_Producer",
               "type": "producer",
               "state": "connected",
-              "timestamp": 1647886277387,
+              "timestamp": 1649223227744,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|MoMRAH_Producer": {
+            "value": {
+              "id": "SkxI968ZnK",
+              "name": "MoMRAH_Producer",
+              "type": "producer",
+              "state": "connected",
+              "timestamp": 1649223227791,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|MDA_Consumer": {
+            "value": {
+              "id": "ryx4U3Ub2Y",
+              "name": "MDA_Consumer",
+              "type": "stream",
+              "state": "connected",
+              "timestamp": 1649223228169,
               "scope": {
                 "id": "root"
               }
@@ -435,7 +446,7 @@
               "name": "stc_Consumer",
               "type": "stream",
               "state": "connected",
-              "timestamp": 1647887333051,
+              "timestamp": 1649223228241,
               "scope": {
                 "id": "root"
               }
@@ -509,7 +520,8 @@
               "localculture": "general"
             }
           }
-        }
+        },
+        "previewImage": "data:image/png;base64,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"
       },
       "graph": {
         "id": "SkdqxB8zc",
@@ -541,11 +553,11 @@
                 },
                 "o-lp": {
                   "o-x": {
-                    "f": "StreamSheetContainer1000!WIDTH*0.5",
+                    "f": "!WIDTH*0.5",
                     "v": "10500"
                   },
                   "o-y": {
-                    "f": "StreamSheetContainer1000!HEIGHT*0.5",
+                    "f": "!HEIGHT*0.5",
                     "v": "6500"
                   }
                 }
@@ -560,7 +572,7 @@
               },
               "o-inbox": {
                 "split": "5000",
-                "width": "9022"
+                "width": "7884"
               },
               "o-processsheet": {
                 "o-attributes": {
@@ -748,36 +760,6 @@
                               }
                             }
                           }
-                        },
-                        {
-                          "n": "5",
-                          "o-cell": {
-                            "o-f": {
-                              "o-fillcolor": {
-                                "v": "%23cccccc",
-                                "t": "s"
-                              }
-                            },
-                            "o-a": {
-                              "o-leftborderstyle": {
-                                "v": "1"
-                              },
-                              "o-leftborderwidth": {
-                                "v": "3"
-                              }
-                            }
-                          }
-                        },
-                        {
-                          "n": "6",
-                          "o-cell": {
-                            "o-a": {
-                              "o-key": {
-                                "v": "true",
-                                "t": "b"
-                              }
-                            }
-                          }
                         }
                       ]
                     },
@@ -824,6 +806,17 @@
                               }
                             }
                           }
+                        },
+                        {
+                          "n": "6",
+                          "o-cell": {
+                            "o-a": {
+                              "o-key": {
+                                "v": "true",
+                                "t": "b"
+                              }
+                            }
+                          }
                         }
                       ]
                     },
@@ -848,6 +841,25 @@
                               "o-key": {
                                 "v": "true",
                                 "t": "b"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "5",
+                          "o-cell": {
+                            "o-f": {
+                              "o-fillcolor": {
+                                "v": "%23cccccc",
+                                "t": "s"
+                              }
+                            },
+                            "o-a": {
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-leftborderwidth": {
+                                "v": "3"
                               }
                             }
                           }
@@ -910,6 +922,33 @@
                     },
                     {
                       "n": "9",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-a": {
+                              "o-key": {
+                                "v": "true",
+                                "t": "b"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "3",
+                          "o-cell": {
+                            "o-a": {
+                              "o-key": {
+                                "v": "true",
+                                "t": "b"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "10",
                       "a-c": [
                         {
                           "n": "2",
@@ -1017,12 +1056,17 @@
       "state": "connected"
     },
     {
-      "id": "rJxgaJrLz5",
-      "name": "Resident_Producer",
+      "id": "rJlMIQUVot",
+      "name": "MDA_Producer",
+      "scope": {
+        "id": "root"
+      },
+      "owner": null,
       "disabled": false,
       "className": "ProducerConfiguration",
-      "lastModified": "2022-03-21T18:11:17.373Z",
-      "lastAccessed": "2022-03-21T18:11:04.034Z",
+      "lastModified": "2022-01-04T10:37:45.742Z",
+      "lastAccessed": "2021-12-25T08:16:09.743Z",
+      "description": "MDA Producer",
       "connector": {
         "_id": "HylKJmLVsK",
         "id": "HylKJmLVsK",
@@ -1034,15 +1078,13 @@
         "isRef": true
       },
       "providerId": "@cedalo/stream-mqtt",
+      "samplePayloads": null,
       "mimeType": "auto",
       "fixedClientId": false,
       "clientId": "",
       "clean": true,
-      "pubTopic": "mobility/",
+      "pubTopic": "mda/",
       "userPropertiesProduce": [],
-      "scope": {
-        "id": "root"
-      },
       "state": "connected"
     }
   ]
