@@ -7001,5 +7001,107 @@
       }
     }
   ],
-  "streams": []
+  "streams": [
+    {
+      "id": "HylKJmLVsK",
+      "name": "stcChain_MQTT_Broker",
+      "scope": {
+        "id": "root"
+      },
+      "owner": null,
+      "disabled": false,
+      "className": "ConnectorConfiguration",
+      "lastModified": "2023-02-08T11:27:18.170Z",
+      "lastAccessed": "2021-12-25T08:14:25.116Z",
+      "provider": {
+        "_id": "@cedalo/stream-mqtt",
+        "id": "@cedalo/stream-mqtt",
+        "className": "ProviderConfiguration",
+        "owner": null,
+        "disabled": null,
+        "lastModified": null,
+        "lastAccessed": null,
+        "isRef": true
+      },
+      "protocolVersion": 4,
+      "url": "mqtt://95.177.176.224:1883",
+      "userPropertiesConnect": [],
+      "userName": "broker",
+      "password": "@stcchain",
+      "baseTopic": "",
+      "retain": false,
+      "qos": 2,
+      "description": "stcChain MQTT Broker",
+      "state": "disconnected"
+    },
+    {
+      "id": "SJxJ4NuqE9",
+      "name": "A0_Parking_7A_Data",
+      "scope": {
+        "id": "root"
+      },
+      "owner": null,
+      "disabled": null,
+      "className": "ConsumerConfiguration",
+      "lastModified": "2023-02-08T11:49:19.624Z",
+      "lastAccessed": "2022-04-18T05:16:22.521Z",
+      "connector": {
+        "_id": "HylKJmLVsK",
+        "id": "HylKJmLVsK",
+        "className": "ConnectorConfiguration",
+        "owner": null,
+        "disabled": false,
+        "lastModified": "2023-02-08T11:27:18.170Z",
+        "lastAccessed": "2021-12-25T08:14:25.116Z",
+        "isRef": true
+      },
+      "description": "Parking 7A Simulated Data",
+      "filter": null,
+      "labelAttribute": null,
+      "idAttribute": null,
+      "samplePayloads": null,
+      "providerId": "@cedalo/stream-mqtt",
+      "mimeType": "auto",
+      "fixedClientId": false,
+      "clientId": "",
+      "clean": true,
+      "userPropertiesSubscribe": [],
+      "topics": [
+        "mawgif/parking7a"
+      ],
+      "state": "connected"
+    },
+    {
+      "id": "rJlMIQUVot",
+      "name": "A1_MAWGIF_Producer",
+      "scope": {
+        "id": "root"
+      },
+      "owner": null,
+      "disabled": false,
+      "className": "ProducerConfiguration",
+      "lastModified": "2022-05-02T03:22:29.935Z",
+      "lastAccessed": "2021-12-25T08:16:09.743Z",
+      "description": "MAWIGIF Producer to MDA for Parking 7A Data",
+      "connector": {
+        "_id": "HylKJmLVsK",
+        "id": "HylKJmLVsK",
+        "className": "ConnectorConfiguration",
+        "owner": null,
+        "disabled": false,
+        "lastModified": "2022-05-02T03:17:03.640Z",
+        "lastAccessed": "2021-12-25T08:14:25.116Z",
+        "isRef": true
+      },
+      "providerId": "@cedalo/stream-mqtt",
+      "samplePayloads": null,
+      "mimeType": "auto",
+      "fixedClientId": false,
+      "clientId": "",
+      "clean": true,
+      "pubTopic": "mda/parking7a",
+      "userPropertiesProduce": [],
+      "state": "connected"
+    }
+  ]
 }
